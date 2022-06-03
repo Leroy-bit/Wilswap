@@ -1,0 +1,548 @@
+/* Connect fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Rubik&display=swap');
+
+/* Connect fonts */
+
+body {
+    padding: 50px 100px;
+    background-color: #222222;
+    font-family: 'Raleway', sans-serif;
+}
+header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+header .menu {
+    width: 40%;
+    display: flex;
+    align-items: inherit;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.7);;
+}
+
+header .menu .item {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s all linear;
+    box-sizing: border-box;
+}
+
+header .menu .item:hover {
+    cursor: pointer;
+}
+
+header .menu .active-item {
+    color: white;
+}
+
+header .menu .arrow-down::after {
+    content: "";
+    display: inline-block;
+    background: url("images/arrow-down.png") no-repeat center center;
+    margin-left: 5px;
+    width: 10px;
+    height: 6px;
+}
+
+header .menu .active-item::after {
+    content: "";
+}
+
+header .menu .item .drop-menu {
+    display: none;
+    width: 110px;
+    background-color: #b3b3b367;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 5px;
+    transition: 1s all linear;
+    box-sizing: border-box;
+    position: fixed;
+    font-size: 18px;
+}
+
+header .menu .item:hover > .drop-menu {
+    display: block;
+    
+}
+
+header .menu .item .drop-menu .element {
+    margin: 8px;
+    color: white;
+}
+
+header .lang {
+    color: #FFFFFFB2;
+    display: flex;
+    margin-left: 35px;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    margin-right: 20%;
+}
+
+header .lang:hover {
+    cursor: pointer;
+}
+
+header .lang::before {
+    content: "";
+    display: inline-block;
+    background: url("images/language-icon.png") no-repeat center center;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.connect_wallet_button {
+    width: 220px;
+    height: 41px;
+    background: linear-gradient(90deg, #4D29CE 3.08%, #FB48F9 100%);
+    transform: skew(-20deg);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+}
+
+.connect_wallet_button:hover {
+    border: 2px solid white;
+    transform: skew(0deg);
+    cursor:pointer;
+}
+
+.connect_wallet_button:hover > .text {
+    transform: skew(0deg);
+}
+
+.connect_wallet_button:hover > .wallet-icon {
+    transform: skew(0deg);
+}
+
+.connect_wallet_button .text {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    transform: skew(20deg);
+    display: flex;
+    align-items: center;
+    transition: inherit;
+}
+
+
+.setings .icon{
+    width: 30px;
+    height: 30px;
+    margin-left: 35px;
+    color: white;
+}
+
+.setings:hover {
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+
+.connect_wallet_button .wallet-icon {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin-right: 7px;
+    transform: skew(20deg);
+    transition: inherit;
+}
+
+main {
+    height: 700px;
+}
+
+.threed-model {
+    width: 40%;
+    height: 10%;
+}
+
+.threed-model img {
+    width: 100%;
+}
+
+
+
+
+/* ------------------------------------------------- */
+
+
+.swap {
+    height: 564px;
+    width: 476px;
+    margin-top: 70px;
+    border-radius: 20px;
+    background-color: #000000;
+}
+
+.swap-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu for swap window */
+
+.swap-menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    width: 90%;
+    margin: 5% 5% 0% 5%;
+}
+
+.swap-menu-options {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.swap-menu-options span {
+    color: #FFFFFFB2;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.swap-menu-options span:hover {
+    color: #FFFFFF;
+}
+
+.swap-menu-settings {
+    position: relative;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.swap-menu-settings ion-icon {
+    color: #F8F8F8CC;
+    height: 23px;
+    width: 23px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.swap-menu-settings ion-icon:hover {
+    color: #FFFFFF;
+}
+
+#refresh:hover {
+    transform: rotate(360deg);
+}
+
+/* Trade blocks */
+
+.swap-trade {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    height: 72%;
+    margin: 5% 5% 0% 5%;
+    align-items: center;
+}
+
+.swap-trade p, b {
+    color: #FFFFFFB2;
+    font-size: 14px;
+}
+
+.swap-trade-sell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 50%;
+    background: #222222;
+    border-radius: 20px;
+    padding: 2% 5% 2% 5%;
+    justify-content: space-between;
+}
+
+.swap-trade-currency {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+/* Search for currency */
+
+.currency-choice {
+  	display: flex;
+  	align-items: center;
+    cursor: pointer;
+    padding: 0px 5px 0px 0px;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.currency-choice ion-icon {
+    position: relative;
+    margin-left: 5px;
+    color: #FFFFFF;
+    transition: 0.4s;
+}
+
+.currency-choice img {
+    margin-right: 10px;
+    margin-left: 5px;
+    height: 22px;
+    width: 22px;
+}
+
+.currency-choice:hover {
+    background-color: #3b3b3b;
+}
+
+.currency-choice:hover ion-icon {
+    transform: rotate(-90deg);
+}
+
+/**/
+
+#currency-number-sell {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 20px;
+    text-align: end;
+    color: #FFFFFF;
+    width: 200px;
+}
+
+.numbers {
+    font-family: 'Roboto', sans-serif;
+}
+
+.swap-trade-sell-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#swap-arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: #FFFFFF;
+    opacity: 0.5;
+    top: 167px;
+    transition: 0.6s;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#swap-arrow:hover {
+    opacity: 1;
+    width: 32px;
+    height: 32px;
+    transform: rotate(-360deg);
+
+}
+
+.swap-trade-buy {
+    position: relative;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 60%;
+    border-radius: 20px;
+    border: 0.6px solid rgba(255, 255, 255, 0.35);
+    padding: 2% 5% 5% 5%;
+    justify-content: space-between;
+}
+
+.percent-window {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 36%;
+    padding: 3% 5% 0% 5%;
+    border: 0.6px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.percent-window ion-icon {
+    position: absolute;
+    left: 90px;
+    top: 15px;
+    color: #F8F8F8CC;
+}
+
+.percent-window-main {
+    font-size: 16px;
+}
+
+#currency-number-buy {
+    font-size: 20px;
+    text-align: end;
+    color: #FFFFFF;
+}
+
+.swap-button {
+    position: relative;
+    top: 22px;
+    height: 8%;
+    width: 40%;
+    color: #FFFFFFB2;
+    background: linear-gradient(90deg, rgba(77, 41, 206, 0.4) 3.08%, rgba(251, 72, 249, 0.4) 100%);
+    border-radius: 2px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(-30deg);
+    opacity: 0.5;
+    transition: 0.4s;
+    cursor: pointer; 
+}
+
+.swap-content .connect_wallet_button {
+    margin-top: 25px;
+    z-index: 4;
+}
+
+.button-content {
+    transform: skew(30deg);
+}
+
+.swap-button:hover {
+    opacity: 1;
+}
+
+.swap-search {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swap-search ion-icon {
+    position: absolute;
+    color: #F8F8F8CC;
+    transition: 0.4s;
+}
+
+.swap-search ion-icon:hover {
+    color: #FFFFFF;
+}
+
+.swap-search p,b {
+    color: #FFFFFFB2;
+}
+
+.search-title {
+    font-size: 19px;
+    margin: 3% 0% 3% 0%;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    background: #222222;
+}
+
+.search-input input[type='text'] {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFFB2;
+    font-family: 'Raleway', sans-serif;
+}
+
+.search-input ion-icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.all-coins {
+    position: relative;
+    width: 90%;
+    background: #222222;
+    margin-top: 3%;
+    border-radius: 20px;
+}
+
+.all-coins ul {
+    list-style: none;
+    padding: 0;
+}
+
+.all-coins ul li{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    color: #FFFFFFB2;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.all-coins ul li:hover {
+    background: #1b1b1b;
+}
+
+.all-coins ul li img{
+    width: 40px;
+    height: 40px;
+    margin: 0px 20px 0px 20px;
+}
+
+#error-search {
+    display: none;
+    justify-content: center;
+}
