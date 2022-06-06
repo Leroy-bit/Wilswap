@@ -13,6 +13,7 @@ var exchange_rates = {}
 var li = document.getElementsByClassName('coin-li');
 var extraInfo = document.getElementsByClassName('swap-trade-sell-info')[0];
 var searchCoins = document.getElementById('input-coins');
+var symbols_for_sell_label = ['0','1','2','3','4','5','6','7','8','9','.'];
 // var exchange_rate_timer_id = setInterval(async function() {
 //     let xmlHttp = new XMLHttpRequest()
 //     for (let i = 0; i < available_coins.length; i++) {
@@ -102,31 +103,43 @@ function on_click_coin_li(element) {
     to_sell_input_change()
 }
 
-var ul = document.getElementById('coin-ul');
+var coinImages = document.getElementsByClassName('coin-image');
 var noResult = document.getElementById('error-search');
 var showedLi = 0;
 
 searchCoins.addEventListener('keyup', function() {
     for (var i=0; i<li.length; i++) {
-        if (li[i].id.indexOf(this.value) == -1 && li[i].id.toLowerCase().indexOf(this.value) == -1 && li[i].id.toUpperCase().indexOf(this.value) == -1) {
+        if (coinImages[i].alt.indexOf(this.value) == -1 && coinImages[i].alt.toLowerCase().indexOf(this.value) == -1 && coinImages[i].alt.toUpperCase().indexOf(this.value) == -1) {
             li[i].style.display = "none";
-            for (var j=0; j<li.length; j++) {
-                if (li[j].style.display == "flex") {
-                    showedLi += 1;
-                }
-            }
         } else {
             li[i].style.display = "flex";
-            noResult.style.display = 'none';
-            showedLi = 0;
         }
-        if (showedLi == 0 && this.value != "") {
-            noResult.style.display = 'flex';
-            noResult.innerHTML = '<p>No results for "'+ this.value + '"</p>';
-        } else {
-            noResult.style.display = 'none';
+    }
+    for (var i=0; i<li.length; i++) {
+        if (li[i].style.display == "flex") {
+            showedLi += 1;
         }
-        showedLi = 0;
+    }
+    if (showedLi == 0) {
+        noResult.style.display = 'flex';
+        noResult.innerHTML = '<p>No results for "'+ this.value + '"</p>';
+    } else {
+        noResult.style.display = 'none';
+    }
+    showedLi = 0;
+});
+
+
+
+to_sell_label.addEventListener('keyup', function() {
+    if (symbols_for_sell_label.includes(this.value[this.value.length-1]) == false) {
+        this.value = this.value.slice(0, -1);
+    }
+    if (this.value == "") {
+        this.value = "0";
+    }
+    if (this.value[0] == '0' && this.value.length > 1) {
+        this.value = this.value.substring(1);
     }
 });
 
@@ -158,7 +171,12 @@ async function connect_wallet() {
 
 async function to_sell_input_change(value=to_sell_label.value) {
     exchange_rate = exchange_rates[sell_currency] / exchange_rates[buy_currency]
-    to_buy_label.innerHTML = (parseFloat(value) * exchange_rate).toFixed(3)
+    change_value = (parseFloat(value) * exchange_rate).toFixed(3);
+    if (change_value == "NaN") {
+        to_buy_label.innerHTML = "0";
+    } else {
+        to_buy_label.innerHTML = change_value;
+    }
 }
 
 to_sell_label.oninput = function() {

@@ -12,6 +12,9 @@ body {
 header {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .logo {
@@ -22,29 +25,66 @@ header {
 }
 
 header .menu {
-    width: 40%;
+    position: relative;
+    height: 41px;
     display: flex;
     align-items: inherit;
     justify-content: space-around;
-    color: rgba(255, 255, 255, 0.7);;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+header .title {
+    height: 41px;
+    display: flex;
+    align-items: center;
+}
+
+header .navigation {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+    gap: 10px;
+    width: 800px;
+}
+
+header .general-settings {
+    display: flex;
+    align-items: center;
 }
 
 header .menu .item {
+    position: relative;
+    width: 100px;
+    height: 41px;
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
-    display: flex;
+    text-align: center;
     align-items: center;
-    flex-direction: column;
-    transition: 1s all linear;
     box-sizing: border-box;
-}
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 20px 20px 0px 0px / 24px 24px 0px 0px;
+}  
 
 header .menu .item:hover {
-    cursor: pointer;
+    background-color: #000000;
+    color: white;
 }
 
 header .menu .active-item {
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+header .menu .item .arrow-down {
+    display: flex;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 header .menu .arrow-down::after {
@@ -61,25 +101,32 @@ header .menu .active-item::after {
 }
 
 header .menu .item .drop-menu {
+    position: absolute;
+    width: 100%;
     display: none;
-    width: 110px;
-    background-color: #b3b3b367;
-    margin-top: 40px;
+    flex-direction: column;
     text-align: center;
-    border-radius: 5px;
-    transition: 1s all linear;
-    box-sizing: border-box;
-    position: fixed;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 18px;
+    border-radius: 0px 0px 20px 20px / 0px 0px 24px 24px;
+    z-index: 5;
 }
 
 header .menu .item:hover > .drop-menu {
-    display: block;
-    
+    display: flex;
+    background-color: #000000;
 }
 
 header .menu .item .drop-menu .element {
-    margin: 8px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 8px 0px 8px 0px;
+    color: #FFFFFFB2;
+}
+
+header .menu .item .drop-menu .element:hover {
     color: white;
 }
 
@@ -87,7 +134,7 @@ header .lang {
     color: #FFFFFFB2;
     display: flex;
     margin-left: 35px;
-    align-items: center;
+    text-align: center;
     font-family: 'Rubik', sans-serif;
     margin-right: 20%;
 }
@@ -116,6 +163,11 @@ header .lang::before {
     justify-content: center;
     transition: all 0.3s linear;
     box-sizing: border-box;
+}
+
+.connect-wallet-swap {
+    position: relative;
+    top: 20px;
 }
 
 .connect_wallet_button:hover {
@@ -148,11 +200,14 @@ header .lang::before {
     width: 30px;
     height: 30px;
     margin-left: 35px;
-    color: white;
+    color: #F8F8F8CC;
+    cursor: pointer;
+    transition: 0.6s;
 }
 
-.setings:hover {
-    cursor: pointer;
+.setings:hover .icon{
+    color: #FFFFFF;
+    transform: rotate(180deg);
 }
 
 .none {
@@ -169,7 +224,12 @@ header .lang::before {
 }
 
 main {
-    height: 700px;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .threed-model {
@@ -188,20 +248,24 @@ main {
 
 
 .swap {
-    height: 564px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
     width: 476px;
-    margin-top: 70px;
+    height: 564px;
     border-radius: 20px;
     background-color: #000000;
+    z-index: 4;
 }
 
 .swap-content {
     position: relative;
-    height: 100%;
+    height: 92%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 20px 0px 0px;
 }
 
 /* Menu for swap window */
@@ -211,8 +275,7 @@ main {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
-    width: 90%;
-    margin: 5% 5% 0% 5%;
+    width: 92%;
 }
 
 .swap-menu-options {
@@ -263,7 +326,7 @@ main {
     position: relative;
     width: 90%;
     height: 72%;
-    margin: 5% 5% 0% 5%;
+    margin: 20px 20px 0px 20px;
     align-items: center;
 }
 
@@ -280,8 +343,12 @@ main {
     height: 50%;
     background: #222222;
     border-radius: 20px;
-    padding: 2% 5% 2% 5%;
+    padding: 8px 20px 8px 20px;
     justify-content: space-between;
+}
+
+.swap-trade-sell .swap-trade-currency {
+    bottom: 21px;
 }
 
 .swap-trade-currency {
@@ -291,6 +358,7 @@ main {
     justify-content: space-between;
     align-items: center;
     height: 40px;
+    bottom: 15px;
 }
 
 /* Search for currency */
@@ -329,13 +397,14 @@ main {
 /**/
 
 #currency-number-sell {
+    position: relative;
     border: none;
     background: none;
     outline: none;
     font-size: 20px;
     text-align: end;
     color: #FFFFFF;
-    width: 200px;
+    width: 60%;
 }
 
 .numbers {
@@ -354,7 +423,7 @@ main {
     height: 30px;
     color: #FFFFFF;
     opacity: 0.5;
-    top: 167px;
+    top: 155px;
     transition: 0.6s;
     z-index: 1;
     cursor: pointer;
@@ -377,17 +446,17 @@ main {
     height: 60%;
     border-radius: 20px;
     border: 0.6px solid rgba(255, 255, 255, 0.35);
-    padding: 2% 5% 5% 5%;
-    justify-content: space-between;
+    padding: 8px 20px 20px 20px;
+    justify-content: space-around;
 }
 
 .percent-window {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 93%;
     height: 36%;
-    padding: 3% 5% 0% 5%;
+    padding: 12px 20px 0px 0px;
     border: 0.6px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
 }
@@ -399,13 +468,17 @@ main {
     color: #F8F8F8CC;
 }
 
+.percent-window div {
+    margin-left: 20px;
+}
+
 .percent-window-main {
     font-size: 16px;
 }
 
 #currency-number-buy {
     font-size: 20px;
-    text-align: end;
+    text-align: center;
     color: #FFFFFF;
 }
 
@@ -465,7 +538,7 @@ main {
 
 .search-title {
     font-size: 19px;
-    margin: 3% 0% 3% 0%;
+    margin: 12px 0px 12px 0px;
 }
 
 .back-button {
@@ -502,7 +575,7 @@ main {
     position: relative;
     width: 25px;
     height: 25px;
-    margin-left: 2%;
+    margin-left: 8px;
     cursor: pointer;
 }
 
@@ -510,7 +583,7 @@ main {
     position: relative;
     width: 90%;
     background: #222222;
-    margin-top: 3%;
+    margin: 12px 54px 0px 54px;
     border-radius: 20px;
 }
 
@@ -545,4 +618,34 @@ main {
 #error-search {
     display: none;
     justify-content: center;
+}
+
+.animation img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: 476px;
+    max-height: 564px;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 25px 50px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        padding: 15px 25px;
+    }
+
+    header .menu .item {
+        width: 85px;
+    }  
+}
+
+@media screen and (max-width: 360px) {
+    header .menu .item {
+        width: 80px;
+    }  
 }

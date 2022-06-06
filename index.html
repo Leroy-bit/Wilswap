@@ -10,35 +10,41 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Wilswap</a>
-        <div class="lang">UA</div>
-        <div class="menu">
-            <div class="item active-item">Home</div>
-            <div class="item">
-                <div class="text arrow-down">Trade</div>
-                <div class="drop-menu">
-                    <div class="element">Simple Mode</div>
-                    <div class="element">Classic Mode</div>
+        <div class="title">
+            <a href="#" class="logo">Wilswap</a>
+            <div class="lang">UA</div>
+        </div>
+        <div class="navigation">
+            <div class="menu">
+                <div class="item active-item">Home</div>
+                <div class="item">
+                    <div class="text arrow-down">Trade</div>
+                    <div class="drop-menu">
+                        <div class="element">Simple Mode</div>
+                        <div class="element">Classic Mode</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text arrow-down">Earn</div>
+                    <div class="drop-menu">
+                        <div class="element">Pool</div>
+                        <div class="element">Mining</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text arrow-down">More</div>
+                    <div class="drop-menu">
+                        <div class="element">About</div>
+                        <div class="element">Blog</div>
+                        <div class="element">Donate</div>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="text arrow-down">Earn</div>
-                <div class="drop-menu">
-                    <div class="element">Pool</div>
-                    <div class="element">Mining</div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text arrow-down">More</div>
-                <div class="drop-menu">
-                    <div class="element">About</div>
-                    <div class="element">Blog</div>
-                    <div class="element">Donate</div>
-                </div>
+            <div class="general-settings">
+                <div class="connect_wallet_button" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
+                <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
             </div>
         </div>
-        <div class="connect_wallet_button" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
-        <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
     </header>
     <main>
         <div class="swap">
@@ -79,7 +85,7 @@
                                 <p>ETH</p>
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
-                            <p id="currency-number-buy" class="numbers">1</p>
+                            <p id="currency-number-buy" class="numbers">0</p>
                         </div>
                         <div class="percent-window">
                             <div>
@@ -95,7 +101,7 @@
                     </div>
                 </div>
                 <div class="swap-button" style="display: none;"><span class="button-content" style="display: inherit;">Swap</span></div>
-                <div class="connect_wallet_button" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
+                <div class="connect_wallet_button connect-wallet-swap" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
             </div>
             <div class="swap-search">
                 <ion-icon name="chevron-back-outline" class="back-button"></ion-icon>
@@ -105,25 +111,25 @@
                     <input type="text" placeholder="Enter a name of coin" id="input-coins">
                 </div>
                 <div class="all-coins">
-                    <ul id="coin-ul">
+                    <ul>
                         <li class="coin-li available-coin" id="ETH" onclick="on_click_coin_li(this)">
-                            <img src="images/logo-ETH.png" alt="Ethereum">
+                            <img src="images/logo-ETH.png" alt="Ethereum" class="coin-image">
                             <p class="name">Ethereum</p>
                         </li>
                         <li class="coin-li available-coin" id="BTC" onclick="on_click_coin_li(this)">
-                            <img src="images/pngwing.com.png" alt="Bitcoin" >
+                            <img src="images/pngwing.com.png" alt="Bitcoin" class="coin-image">
                             <p class="name">Bitcoin</p>
                         </li>
                         <li class="coin-li available-coin" id="MATIC" onclick="on_click_coin_li(this)">
-                            <img src="images/polygon-matic.png" alt="Matic">
+                            <img src="images/polygon-matic.png" alt="Matic" class="coin-image">
                             <p class="name">Matic</p>
                         </li>
                         <li class="coin-li available-coin" id="ETC" onclick="on_click_coin_li(this)">
-                            <img src="images/kindpng_652796.png" alt="EthereumC">
+                            <img src="images/kindpng_652796.png" alt="Ethereum Classic" class="coin-image">
                             <p class="name">Ethereum Classic</p>
                         </li>
                         <li class="coin-li available-coin" id="BNB" onclick="on_click_coin_li(this)">
-                            <img src="images/pngwing1.com.png" alt="BNB">
+                            <img src="images/pngwing1.com.png" alt="BNB" class="coin-image">
                             <p class="name">BNB</p>
                         </li>
                         <li id="error-search"></li>
@@ -132,6 +138,7 @@
             </div>
         </div>
         
+        <div class="animation"><img src="images/3d.png" alt="3d"></div>
     </main>
 
 
