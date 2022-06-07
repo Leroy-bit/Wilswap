@@ -8,6 +8,8 @@ body {
     padding: 50px 100px;
     background-color: #222222;
     font-family: 'Raleway', sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 header {
     display: flex;
