@@ -1,3 +1,5 @@
+// define all global variables
+
 let currency = document.getElementsByClassName('currency-choice')
 let swapContent = document.getElementsByClassName('swap-content')[0];
 let swapSearch = document.getElementsByClassName('swap-search')[0];
@@ -17,6 +19,13 @@ let searchCoins = document.getElementById('input-coins');
 let account_block = document.getElementsByClassName('account-block')[0]
 let account_adress_element = document.getElementsByClassName('account-adress')[0]
 let symbols_for_sell_label = ['0','1','2','3','4','5','6','7','8','9','.'];
+let menuMobileAction = document.getElementsByClassName('menu-mobile')[0];
+let menuMobileIcon = document.getElementsByClassName('menu-mobile-icon');
+let menuMobile = document.getElementsByClassName('menu')[1];
+let blurBlock = document.getElementsByClassName('blur')[0]
+let connect_wallet_buttons = document.getElementsByClassName('connect_wallet_button')
+
+// get cryptocurrency exchange rate
 
 async function exchange_rate_tick(asynch = true) {
     let xmlHttp = new XMLHttpRequest()
@@ -37,17 +46,20 @@ async function exchange_rate_tick(asynch = true) {
     to_sell_input_change()
 }
 
+// Connect to Metamask
+
 import { ethers } from "./ethers-5.2.esm.min.js";
 const provider = new ethers.providers.Web3Provider(window.ethereum)
-
-window.ethereum.on('accountsChanged', function() {document.location.reload()})
+if (window.ethereum) {
+    window.ethereum.on('accountsChanged', function() {document.location.reload()})
+}
 async function get_accounts(connect) {
     if(window.ethereum){
         try {
-            accounts = await provider.send("eth_accounts", [])
+            accounts = await provider.send("eth_accounts", []) // Account is connected?
             if (accounts[0]) {
                 console.log(accounts.length)
-                for (let i = 0; i < connect_wallet_buttons.length; i++) {
+                for (let i = 0; i < connect_wallet_buttons.length; i++) { // make swap button visible
                     if (!connect_wallet_buttons[i].classList.contains('swap-button')) {
                         connect_wallet_buttons[i].style.display = 'none'
                     } else {
@@ -55,14 +67,15 @@ async function get_accounts(connect) {
                     }
                     
                 }
+                document.getElementsByClassName('account-block')[0].appendChild(generateIdenticon(45)) // insert a avatar to account block
                 account_block.style.display = "flex"
                 account_adress_element.innerHTML = accounts[0].substr(0, 5) + "..." + accounts[0].substr(accounts[0].length - 4, 4)
             }
             else if(accounts != true && connect) {
                 try {
-                    accounts = await provider.send("eth_requestAccounts", [])
+                    accounts = await provider.send("eth_requestAccounts", []) // request to connect wallet
                     if (accounts) {
-                        document.location.reload()
+                        document.location.reload() // reload page
                 }
                 } catch (error) {
                     
@@ -70,7 +83,7 @@ async function get_accounts(connect) {
                 
             }
             else {
-                for (let i = 0; i < connect_wallet_buttons.length; i++) {
+                for (let i = 0; i < connect_wallet_buttons.length; i++) { // make swap button invisible
                     if (connect_wallet_buttons[i].classList.contains('swap-button')) {
                         connect_wallet_buttons[i].style.display = 'none'
                     } else {
@@ -85,28 +98,25 @@ async function get_accounts(connect) {
                 
     }
     else {
-        window.location = "https://metamask.io"
+        window.location = "https://metamask.io" // Redirect to Metamask site
     }
 }
 
-let connect_wallet_buttons = document.getElementsByClassName('connect_wallet_button')
 for (let i = 0; i < connect_wallet_buttons.length; i++) {
     connect_wallet_buttons[i].addEventListener('click', get_accounts)
 }
-import generateIdenticon from "./handmade-jazzicon.js";
+import generateIdenticon from "./handmade-jazzicon.js"; // Get avatar
 
-
-
-
+// On page load listener
 
 document.addEventListener("DOMContentLoaded", function() {
-    get_accounts()
-    to_sell_label.value = 0
-    to_buy_label.innerHTML = 1
-    document.getElementsByClassName('account-block')[0].appendChild(generateIdenticon(45, 4853))
+    get_accounts() // Check a connection to Metamask
+    // Set a null values to input lables
+    to_sell_label.value = 0 
+    to_buy_label.innerHTML = 0
     
 })
-let exchange_rate_timer_id = setInterval(exchange_rate_tick, 10000)  
+let exchange_rate_timer_id = setInterval(exchange_rate_tick, 10000)  // Create a timer for get the exchange rates
 
 
 for (let i=0; i<currency.length; i++) {
@@ -122,7 +132,7 @@ for (let i=0; i<currency.length; i++) {
     });
 }
 
-backButton.addEventListener('click', function() {
+backButton.addEventListener('click', function() { 
     swapContent.style.display = 'flex';
     swapSearch.style.display = 'none';
 });
@@ -172,7 +182,7 @@ searchCoins.addEventListener('keyup', function() {
 
 
 
-to_sell_label.addEventListener('keyup', function() {
+to_sell_label.addEventListener('keyup', function() { // Exchange input filter 
     if (symbols_for_sell_label.includes(this.value[this.value.length-1]) == false) {
         this.value = this.value.slice(0, -1);
     }
@@ -199,3 +209,20 @@ async function to_sell_input_change(value=to_sell_label.value) {
 to_sell_label.oninput = function() {
     to_sell_input_change(this.value)
 }
+
+
+menuMobileAction.addEventListener('click', function() {
+    if (menuMobileIcon[1].style.display == 'none') {
+        this.style.background = '#000000';
+        menuMobileIcon[0].style.display = 'none';
+        menuMobileIcon[1].style.display = 'flex';
+        menuMobile.style.display = 'flex';
+        blurBlock.style.display = 'block';
+    } else {
+        this.style.background = 'none';
+        menuMobileIcon[1].style.display = 'none';
+        menuMobileIcon[0].style.display = 'flex';
+        menuMobile.style.display = 'none';
+        blurBlock.style.display = 'none';
+    }
+});
