@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
     <title>Wilswap</title>
 </head>
@@ -40,8 +39,13 @@
                     </div>
                 </div>
             </div>
+            <div class="account-block none">
+                <div class="account-drop-down none">
+                    <span class="account-adress"></span>
+                </div>
+            </div>
+            <div class="connect_wallet_button"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
             <div class="general-settings">
-                <div class="connect_wallet_button" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
                 <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
             </div>
         </div>
@@ -65,7 +69,7 @@
                         <p>You sell</p>
                         <div class="swap-trade-currency">
                             <div class="currency-choice sell">
-                                <img src="images/logo-ETH.png" alt="Ethereum">
+                                <img src="images/Ethereum-icon.png" alt="Ethereum">
                                 <p>ETH</p>
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
@@ -81,7 +85,7 @@
                         <p>You buy</p>
                         <div class="swap-trade-currency">
                             <div class="currency-choice buy">
-                                <img src="images/logo-ETH.png" alt="Ethereum">
+                                <img src="images/Ethereum-icon.png" alt="Ethereum">
                                 <p>ETH</p>
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
@@ -100,8 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swap-button" style="display: none;"><span class="button-content" style="display: inherit;">Swap</span></div>
-                <div class="connect_wallet_button connect-wallet-swap" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
+                <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
             </div>
             <div class="swap-search">
                 <ion-icon name="chevron-back-outline" class="back-button"></ion-icon>
@@ -112,24 +115,24 @@
                 </div>
                 <div class="all-coins">
                     <ul>
-                        <li class="coin-li available-coin" id="ETH" onclick="on_click_coin_li(this)">
-                            <img src="images/logo-ETH.png" alt="Ethereum" class="coin-image">
+                        <li class="coin-li available-coin" id="ETH">
+                            <img src="images/Ethereum-icon.png" alt="Ethereum" class="coin-image">
                             <p class="name">Ethereum</p>
                         </li>
-                        <li class="coin-li available-coin" id="BTC" onclick="on_click_coin_li(this)">
-                            <img src="images/pngwing.com.png" alt="Bitcoin" class="coin-image">
+                        <li class="coin-li available-coin" id="BTC">
+                            <img src="images/Bitcoin-icon.png" alt="Bitcoin" class="coin-image">
                             <p class="name">Bitcoin</p>
                         </li>
-                        <li class="coin-li available-coin" id="MATIC" onclick="on_click_coin_li(this)">
-                            <img src="images/polygon-matic.png" alt="Matic" class="coin-image">
+                        <li class="coin-li available-coin" id="MATIC">
+                            <img src="images/Matic-icon.png" alt="Matic" class="coin-image">
                             <p class="name">Matic</p>
                         </li>
-                        <li class="coin-li available-coin" id="ETC" onclick="on_click_coin_li(this)">
-                            <img src="images/kindpng_652796.png" alt="Ethereum Classic" class="coin-image">
+                        <li class="coin-li available-coin" id="ETC">
+                            <img src="images/Ethereum-Classic-icon.png" alt="Ethereum Classic" class="coin-image">
                             <p class="name">Ethereum Classic</p>
                         </li>
-                        <li class="coin-li available-coin" id="BNB" onclick="on_click_coin_li(this)">
-                            <img src="images/pngwing1.com.png" alt="BNB" class="coin-image">
+                        <li class="coin-li available-coin" id="BNB">
+                            <img src="images/Binance-Coin-icon.png" alt="BNB" class="coin-image">
                             <p class="name">BNB</p>
                         </li>
                         <li id="error-search"></li>
@@ -142,7 +145,7 @@
     </main>
 
 
-    <script src="script.js"></script>
+    <script type="module" src="/scripts/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
