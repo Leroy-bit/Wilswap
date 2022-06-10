@@ -5,12 +5,14 @@
 /* Connect fonts */
 
 body {
-    padding: 50px 100px;
+    padding: 50px 10%;
+    margin: 0;
     background-color: #222222;
     font-family: 'Raleway', sans-serif;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }
+
 header {
     display: flex;
     align-items: center;
@@ -19,12 +21,16 @@ header {
     gap: 10px;
 }
 
-.logo {
-    font-family: 'Raleway', sans-serif;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
+main {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
+
+/* Main blocks in header */
 
 header .menu {
     position: relative;
@@ -33,6 +39,7 @@ header .menu {
     align-items: inherit;
     justify-content: space-around;
     color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
 }
 
 header .title {
@@ -54,82 +61,11 @@ header .general-settings {
     align-items: center;
 }
 
-header .menu .item {
-    position: relative;
-    width: 100px;
-    height: 41px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 20px 20px 0px 0px / 24px 24px 0px 0px;
-}  
-
-header .menu .item:hover {
-    background-color: #000000;
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
     color: white;
-}
-
-header .menu .active-item {
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-}
-
-header .menu .item .arrow-down {
-    display: flex;
-    position: relative;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-header .menu .arrow-down::after {
-    content: "";
-    display: inline-block;
-    background: url("images/arrow-down.png") no-repeat center center;
-    margin-left: 5px;
-    width: 10px;
-    height: 6px;
-}
-
-header .menu .active-item::after {
-    content: "";
-}
-
-header .menu .item .drop-menu {
-    position: absolute;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 18px;
-    border-radius: 0px 0px 20px 20px / 0px 0px 24px 24px;
-    z-index: 5;
-}
-
-header .menu .item:hover > .drop-menu {
-    display: flex;
-    background-color: #000000;
-}
-
-header .menu .item .drop-menu .element {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 8px 0px 8px 0px;
-    color: #FFFFFFB2;
-}
-
-header .menu .item .drop-menu .element:hover {
-    color: white;
+    text-decoration: none;
 }
 
 header .lang {
@@ -153,6 +89,156 @@ header .lang::before {
     width: 20px;
     height: 20px;
 }
+
+/* Menu for PC version */
+
+.menu .item {
+    position: relative;
+    width: 100px;
+    height: 41px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 20px 20px 0px 0px / 24px 24px 0px 0px;
+}  
+
+.menu .item:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.menu .active-item {
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.menu .item .arrow-down {
+    display: flex;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .item .arrow-down ion-icon {
+    margin-right: 5px;
+    transition: 0.6s;
+}
+
+.menu .item:hover ion-icon {
+    transform: rotate(360deg);
+}
+
+.menu .item .drop-menu {
+    position: absolute;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 0px 0px 20px 20px / 0px 0px 24px 24px;
+}
+
+.menu .item:hover .drop-menu {
+    display: flex;
+    background-color: #000000;
+}
+
+.menu .item .drop-menu .element {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 8px 0px 8px 0px;
+    color: #FFFFFFB2;
+}
+
+.menu .item .drop-menu .element:hover {
+    color: white;
+}
+
+/* Menu for mobile version */
+
+.menu-mobile-block .menu {
+    position: absolute;
+    width: 130px;
+    top: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-mobile-block .menu .item {
+    width: 100%;
+    border-radius: 0px;
+    background: #000000;
+    border-top: none;
+    border-bottom: none;
+}
+
+.menu-mobile-block .menu .item .arrow-down {
+    padding: 0px 30px;
+    justify-content: flex-start;
+}
+
+.menu-mobile-block .menu .item .arrow-down ion-icon {
+    transition: 0.4s;
+}
+
+.menu-mobile-block .menu .item:hover ion-icon {
+    transform: rotate(90deg);
+}
+
+.menu-mobile-block .menu .item .drop-menu {
+    border-radius: 0px;
+    width: 100%;
+    right: 130px;
+    top: 0px;
+    border-radius: 20px 0px 20px 20px / 20px 0px 20px 20px;
+}
+
+.menu-mobile-block .menu .last {
+    border-radius: 0px 0px 20px 20px / 0px 0px 20px 20px;
+}
+
+.menu-mobile-block .menu .last:hover {
+    border-radius: 0px 0px 20px 0px / 0px 0px 20px 0px;
+}
+
+.menu-mobile-block .menu .active-item {
+    border-radius: 20px 0px 0px 0px / 20px 0px 0px 0px;
+}
+
+.menu-mobile-block {
+    position: absolute;
+    top: 30px;
+    left: 90%;
+    align-items: center;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 3;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile {
+    position: relative;
+    border-radius: 10px 10px 0px 0px / 10px 10px 0px 0px;
+    padding: 2px 2px 0px 2px;
+}
+
+/* Connect wallet button */
 
 .connect_wallet_button {
     width: 220px;
@@ -197,25 +283,6 @@ header .lang::before {
     transition: inherit;
 }
 
-
-.setings .icon{
-    width: 30px;
-    height: 30px;
-    margin-left: 35px;
-    color: #F8F8F8CC;
-    cursor: pointer;
-    transition: 0.6s;
-}
-
-.setings:hover .icon{
-    color: #FFFFFF;
-    transform: rotate(180deg);
-}
-
-.none {
-    display: none;
-}
-
 .connect_wallet_button .wallet-icon {
     color: white;
     font-size: 24px;
@@ -225,13 +292,27 @@ header .lang::before {
     transition: inherit;
 }
 
-main {
-    margin-top: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
+/* Other */
+
+.menu-mobile-icon, .settings {
+    width: 30px;
+    height: 30px;
+    color: #F8F8F8CC;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.settings {
+    margin-left: 35px;
+}
+
+.settings:hover, .menu-mobile-icon:hover{ 
+    color: #FFFFFF;
+    transform: rotate(180deg);
+}
+
+.none {
+    display: none;
 }
 
 .threed-model {
@@ -243,11 +324,9 @@ main {
     width: 100%;
 }
 
-
-
-
 /* ------------------------------------------------- */
 
+/* Swap window */
 
 .swap {
     margin-bottom: 20px;
@@ -257,7 +336,7 @@ main {
     height: 564px;
     border-radius: 20px;
     background-color: #000000;
-    z-index: 4;
+    z-index: 0;
 }
 
 .swap-content {
@@ -281,8 +360,9 @@ main {
 }
 
 .swap-menu-options {
+    margin-left: 7px;
     position: relative;
-    width: 50%;
+    width: 40%; /* 50% with p2p */
     display: flex;
     justify-content: space-between;
 }
@@ -504,7 +584,6 @@ main {
 
 .swap-content .connect_wallet_button {
     margin-top: 25px;
-    z-index: 4;
 }
 
 .button-content {
@@ -630,20 +709,73 @@ main {
     max-height: 564px;
 }
 
+.blur {
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    opacity: 0.7;
+    z-index: 2;
+}
+
 @media screen and (max-width: 1000px) {
     body {
-        padding: 25px 50px;
+        padding: 25px 10%;
     }
+}
+
+@media screen and (max-width: 890px) {
+    header .menu {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    header .navigation {
+        width: 300px;
+    }
+    
 }
 
 @media screen and (max-width: 420px) {
     body {
-        padding: 15px 25px;
+        padding: 15px 10%;
     }
 
     header .menu .item {
         width: 85px;
-    }  
+    }
+
+    .menu-mobile-block {
+        top: 20px;
+        left: 87%;
+    }
+
+    .swap-menu-options {
+        width: 50%; /* 70% with p2p */
+    }
+
+    .swap-menu-settings {
+        width: 30%;
+    }
+
+    .swap-trade-sell, .swap-trade-buy {
+        width: 80%;
+    }
+
+    .swap-menu {
+        width: 85%;
+    }
+
+    .percent-window {
+        padding: 12px 12px 0px 0px;
+    }
+    
 }
 
 @media screen and (max-width: 360px) {

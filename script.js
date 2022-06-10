@@ -14,6 +14,7 @@ var li = document.getElementsByClassName('coin-li');
 var extraInfo = document.getElementsByClassName('swap-trade-sell-info')[0];
 var searchCoins = document.getElementById('input-coins');
 var symbols_for_sell_label = ['0','1','2','3','4','5','6','7','8','9','.'];
+var blurBlock = document.getElementsByClassName('blur')[0];
 // var exchange_rate_timer_id = setInterval(async function() {
 //     let xmlHttp = new XMLHttpRequest()
 //     for (let i = 0; i < available_coins.length; i++) {
@@ -143,8 +144,25 @@ to_sell_label.addEventListener('keyup', function() {
     }
 });
 
+var menuMobileAction = document.getElementsByClassName('menu-mobile')[0];
+var menuMobileIcon = document.getElementsByClassName('menu-mobile-icon');
+var menuMobile = document.getElementsByClassName('menu')[1];
 
-
+menuMobileAction.addEventListener('click', function() {
+    if (menuMobileIcon[1].style.display == 'none') {
+        this.style.background = '#000000';
+        menuMobileIcon[0].style.display = 'none';
+        menuMobileIcon[1].style.display = 'flex';
+        menuMobile.style.display = 'flex';
+        blurBlock.style.display = 'block';
+    } else {
+        this.style.background = 'none';
+        menuMobileIcon[1].style.display = 'none';
+        menuMobileIcon[0].style.display = 'flex';
+        menuMobile.style.display = 'none';
+        blurBlock.style.display = 'none';
+    }
+});
 
 async function connect_wallet() {
     const getWeb3 = async () => {

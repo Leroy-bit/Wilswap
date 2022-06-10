@@ -6,33 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
-    <title>Wilswap</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <title>Yanchuk</title>
 </head>
 <body>
     <header>
         <div class="title">
-            <a href="#" class="logo">Wilswap</a>
+            <a href="#" class="logo">Yanchuk</a>
             <div class="lang">UA</div>
         </div>
         <div class="navigation">
             <div class="menu">
                 <div class="item active-item">Home</div>
                 <div class="item">
-                    <div class="text arrow-down">Trade</div>
+                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Trade</div>
                     <div class="drop-menu">
                         <div class="element">Simple Mode</div>
                         <div class="element">Classic Mode</div>
                     </div>
                 </div>
                 <div class="item">
-                    <div class="text arrow-down">Earn</div>
+                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Earn</div>
                     <div class="drop-menu">
                         <div class="element">Pool</div>
                         <div class="element">Mining</div>
                     </div>
                 </div>
                 <div class="item">
-                    <div class="text arrow-down">More</div>
+                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>More</div>
                     <div class="drop-menu">
                         <div class="element">About</div>
                         <div class="element">Blog</div>
@@ -42,10 +43,41 @@
             </div>
             <div class="general-settings">
                 <div class="connect_wallet_button" onclick="connect_wallet()"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
-                <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
+                <ion-icon name="cog" class="settings"></ion-icon>
             </div>
         </div>
     </header>
+    <div class="menu-mobile-block">
+        <div class="menu">
+            <div class="item active-item">Home</div>
+            <div class="item">
+                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Trade</div>
+                <div class="drop-menu">
+                    <div class="element">Simple Mode</div>
+                    <div class="element">Classic Mode</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Earn</div>
+                <div class="drop-menu">
+                    <div class="element">Pool</div>
+                    <div class="element">Mining</div>
+                 </div>
+            </div>
+            <div class="item last">
+                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>More</div>
+                <div class="drop-menu">
+                    <div class="element">About</div>
+                    <div class="element">Blog</div>
+                    <div class="element">Donate</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-mobile">
+            <ion-icon name="menu-outline" class="menu-mobile-icon"></ion-icon>
+            <ion-icon name="close-outline" class="menu-mobile-icon" style="display: none;"></ion-icon>
+        </div>
+    </div>
     <main>
         <div class="swap">
             <div class="swap-content">
@@ -53,7 +85,7 @@
                     <div class="swap-menu-options">
                         <span id="swap">Swap</span>
                         <span id="limit">Limit</span>
-                        <span id="p2p">P2P</span>
+                        <!--<span id="p2p">P2P</span>-->
                     </div>
                     <div class="swap-menu-settings">
                         <ion-icon name="refresh-outline" id="refresh"></ion-icon>
@@ -89,7 +121,7 @@
                         </div>
                         <div class="percent-window">
                             <div>
-                                <b class="percent-window-main">Wilswap</b>
+                                <b class="percent-window-main">Yanchuk</b>
                                 <p>Blablabla</p>
                             </div>
                             <div>
@@ -140,7 +172,7 @@
         
         <div class="animation"><img src="images/3d.png" alt="3d"></div>
     </main>
-
+    <div class="blur"></div>
 
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
