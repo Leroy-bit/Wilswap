@@ -15,6 +15,7 @@ body {
 /* Header styles */
 header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
@@ -189,10 +190,13 @@ header .navigation .account-block .account-drop-down .account-adress {
     color: white;
 }
 
+.setings {
+    display: flex;
+}
+
 .setings .icon{
     width: 30px;
     height: 30px;
-    margin-left: 35px;
     color: #F8F8F8CC;
     cursor: pointer;
     transition: 0.6s;
@@ -342,6 +346,12 @@ header .navigation .account-block .account-drop-down .account-adress {
 
 .menu-mobile-block .menu .last {
     border-radius: 0px 0px 20px 20px / 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-mobile-block .menu .last ion-icon {
+    transition: 0.4s;
 }
 
 .menu-mobile-block .menu .last:hover {
@@ -834,17 +844,14 @@ header .navigation .account-block .account-drop-down .account-adress {
     }
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 900px) {
     header .menu {
         display: none;
     }
 
     .menu-mobile {
         display: block;
-    }
-
-    header .navigation {
-        width: 300px;
+        margin-left: 5px;
     }
 
     header .navigation .general-settings {
