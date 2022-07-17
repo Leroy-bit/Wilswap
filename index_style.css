@@ -367,11 +367,11 @@ main .back p {
 }
 
 .flipper .liquidity {
-    background-image: url(css_images/flip-liquidity.png);
+    background: url(images/flip-liquidity.png);
 }
 
 .flipper .trade {
-    background-image: url(css_images/flip-trade.png);
+    background: url(images/flip-trade.png);
 }
 
 /* Footer */
