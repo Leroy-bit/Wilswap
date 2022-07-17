@@ -4,184 +4,163 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/index_style.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <title>Yanchuk</title>
 </head>
 <body>
     <header>
-        <div class="title">
-            <a href="#" class="logo">Yanchuk</a>
-            <div class="lang">UA</div>
-        </div>
-        <div class="navigation">
+        <img src="images/Smoke.png" alt="smoke" class="smoke">
+        <nav>
+            <h1>Yanchuk</h1>
             <div class="menu">
-                <div class="item active-item">Home</div>
-                <div class="item">
-                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Trade</div>
-                    <div class="drop-menu">
-                        <div class="element">Simple Mode</div>
-                        <div class="element">Classic Mode</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Earn</div>
-                    <div class="drop-menu">
-                        <div class="element">Pool</div>
-                        <div class="element">Mining</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>More</div>
-                    <div class="drop-menu">
-                        <div class="element">About</div>
-                        <div class="element">Blog</div>
-                        <div class="element">Donate</div>
-                    </div>
-                </div>
+                <span>Products</span>
+                <span>Developers</span>
+                <span>About us</span>
             </div>
-            <div class="account-block none">
-                <div class="account-drop-down none">
-                    <span class="account-adress"></span>
-                </div>
+            <div class="connect_wallet_button"><p>Connect</p><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon></div>
+        </nav>
+        <hr class="menu-hr">
+        <div class="text-regular">The crypto card</div>
+        <div class="text-best">Best speed.</div>
+        <div class="text-best">Best quality.</div>
+        <div class="text-best">Best security.</div>
+        <div class="text-regular">Will be soon.</div>
+        <div class="card">
+            <p id="card-name">Yanchuk</p>
+            <p id="card-date">0x00</p>
+            <img src="images/Nfc-chip.png" alt="nfc-chip">
+        </div>
+        <div class="card-behind"></div>
+        <div class="phrases">
+            <div>
+                <hr>
+                For everything and everywhere.
             </div>
-            <div class="connect_wallet_button"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
-            <div class="general-settings">
-                <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
+            <div>
+                <hr>
+                Use crypto as fast as posible.
             </div>
         </div>
     </header>
-    <div class="menu-mobile-block">
-        <div class="menu">
-            <div class="item active-item">Home</div>
-            <div class="item">
-                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Trade</div>
-                <div class="drop-menu">
-                    <div class="element">Simple Mode</div>
-                    <div class="element">Classic Mode</div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Earn</div>
-                <div class="drop-menu">
-                    <div class="element">Pool</div>
-                    <div class="element">Mining</div>
-                 </div>
-            </div>
-            <div class="item">
-                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>More</div>
-                <div class="drop-menu">
-                    <div class="element">About</div>
-                    <div class="element">Blog</div>
-                    <div class="element">Donate</div>
-                </div>
-            </div>
-            <div class="item mobile-settings last">
-                <ion-icon name="cog" class="icon"></ion-icon>Settings
-            </div>
-            
-        </div>
-        <div class="menu-mobile">
-            <ion-icon name="menu-outline" class="menu-mobile-icon"></ion-icon>
-            <ion-icon name="close-outline" class="menu-mobile-icon" style="display: none;"></ion-icon>
-        </div>
-    </div>
     <main>
-        <div class="swap">
-            <div class="swap-content">
-                <div class="swap-menu">
-                    <div class="swap-menu-options">
-                        <span id="swap">Swap</span>
-                        <span id="limit">Limit</span>
-                        <!--<span id="p2p">P2P</span>-->
-                    </div>
-                    <div class="swap-menu-settings">
-                        <ion-icon name="refresh-outline" id="refresh"></ion-icon>
-                        <ion-icon name="options-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="swap-trade">
-                    <div class="swap-trade-sell">
-                        <p>You sell</p>
-                        <div class="swap-trade-currency">
-                            <div class="currency-choice sell">
-                                <img src="images/Ethereum-icon.png" alt="Ethereum">
-                                <p>ETH</p>
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                            <input type="text" value="0" id="currency-number-sell" class="numbers">
-                        </div>
-                        <div class="swap-trade-sell-info">
-                            <p>Ethereum</p>
-                            <p class="numbers">$ 1778,03</p>
-                        </div>
-                    </div>
-                    <ion-icon name="arrow-down-circle" id="swap-arrow"></ion-icon>
-                    <div class="swap-trade-buy">
-                        <p>You buy</p>
-                        <div class="swap-trade-currency">
-                            <div class="currency-choice buy">
-                                <img src="images/Ethereum-icon.png" alt="Ethereum">
-                                <p>ETH</p>
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                            <p id="currency-number-buy" class="numbers">0</p>
-                        </div>
-                        <div class="percent-window">
-                            <div>
-                                <b class="percent-window-main">Yanchuk</b>
-                                <p>Blablabla</p>
-                            </div>
-                            <div>
-                                <b class="percent-window-main numbers">0.0000</b>
-                                <p class="numbers">$ 0000,00</p>
-                            </div>
-                            <ion-icon name="chevron-down-outline"></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
+        <p id="swap-title">Swap, send, use</p>
+        <p id="swap-text">For perfect experience.</p>
+        <span id="swap-link"><a href="swap.html">Swap</a><ion-icon name="chevron-forward-outline"></ion-icon></span>
+        <div class="explosion">
+            <div class="explosion-element">
+                <img src="images/exploding_bnb.png" alt="exploding_bnb" class="explosion-image">
+                <img src="images/Bnb.png" alt="bnb" class="coin">
             </div>
-            <div class="swap-search">
-                <ion-icon name="chevron-back-outline" class="back-button"></ion-icon>
-                <b class="search-title">Select currency</b>
-                <div class="search-input">
-                    <ion-icon name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Enter a name of coin" id="input-coins">
+            <div class="explosion-element eth">
+                <img src="images/exploding_eth.png" alt="exploding_eth" class="explosion-image">
+                <img src="images/Eth.png" alt="eth" class="coin">
+            </div>
+            <div class="explosion-element">
+                <img src="images/exploding_matic.png" alt="exploding_matic" class="explosion-image">
+                <img src="images/Matic.png" alt="matic" class="coin">
+            </div>
+        </div>
+        <div class="phrases">
+            <div>
+                <hr>
+                Swap your like tokens.
+            </div>
+            <div>
+                <hr>
+                So many in one product.
+            </div>
+        </div>
+        <div class="flipping-blocks">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="liquidity front">
+                        <p>The perfect liquidity. Ever you need.</p>
+                        <ion-icon name="navigate-circle-outline" class="front-flip-button"></ion-icon>
+                    </div>
+                    <div class="back">
+                        <div>
+                            <h1>Liquidity.</h1>
+                            <p>We use liquidity from many place. Use it where you need</p>
+                        </div>
+                        <ion-icon name="navigate-circle" class="back-flip-button"></ion-icon>
+                    </div>
                 </div>
-                <div class="all-coins">
-                    <ul>
-                        <li class="coin-li available-coin" id="ETH">
-                            <img src="images/Ethereum-icon.png" alt="Ethereum" class="coin-image">
-                            <p class="name">Ethereum</p>
-                        </li>
-                        <li class="coin-li available-coin" id="BTC">
-                            <img src="images/Bitcoin-icon.png" alt="Bitcoin" class="coin-image">
-                            <p class="name">Bitcoin</p>
-                        </li>
-                        <li class="coin-li available-coin" id="MATIC">
-                            <img src="images/Matic-icon.png" alt="Matic" class="coin-image">
-                            <p class="name">Matic</p>
-                        </li>
-                        <li class="coin-li available-coin" id="ETC">
-                            <img src="images/Ethereum-Classic-icon.png" alt="Ethereum Classic" class="coin-image">
-                            <p class="name">Ethereum Classic</p>
-                        </li>
-                        <li class="coin-li available-coin" id="BNB">
-                            <img src="images/Binance-Coin-icon.png" alt="BNB" class="coin-image">
-                            <p class="name">BNB</p>
-                        </li>
-                        <li id="error-search"></li>
-                    </ul>
+            </div>
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="trade front">
+                        <p>Trade, Earn, Used. Forever.</p>
+                        <ion-icon name="navigate-circle-outline" class="front-flip-button"></ion-icon>
+                    </div>
+                    <div class="back">
+                        <div>
+                            <h1>Earn.</h1>
+                            <p>Easy trade. Easy swap. Easy earn with our system.</p>
+                        </div>
+                        <ion-icon name="navigate-circle" class="back-flip-button"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="animation"><img src="images/3d.png" alt="3d"></div>
     </main>
-    <div class="blur"></div>
-
-    <script type="module" src="scripts/script.js"></script>
+    <footer>
+        <div class="flip-container">
+            <div class="flipper">
+                <div class="front">
+                    <div class="useful-info">
+                        <div class="info-block">
+                            <h2>Products</h2>
+                            <a href="#">Card</a>
+                            <a href="swap.html">Swap</a>
+                            <a href="#">Liquidity</a>
+                        </div>
+                        <div class="info-block">
+                            <h2>Developers</h2>
+                            <a href="#">Documentation</a>
+                            <a href="https://github.com/Leroy-bit/Wilswap">GitHub</a>
+                        </div>
+                        <div class="info-block">
+                            <h2>Support</h2>
+                            <a href="#">Help</a>
+                        </div>
+                        <div class="info-block">
+                            <h2>Newsletter to you</h2>
+                            <p>We'll send news about our project.</p>
+                            <span id="news-link"><a href="#">Click</a><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            <div class="socials">
+                                <img src="/images/Telegram.icon.png" alt="telegram">
+                                <img src="/images/Twitter.icon.png" alt="twitter">
+                                <img src="/images/Discord.icon.png" alt="discord">
+                                <img src="/images/Youtube.icon.png" alt="youtube">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="license">
+                        <hr>
+                        <p>© 2022 Yanchuk, All Rights Reserved.</p>
+                    </div>
+                    <ion-icon name="navigate-circle-outline" class="front-flip-button"></ion-icon>
+                </div>
+                <div class="back">
+                    <div class="email-info">
+                        <div>
+                            <p>Your Email.</p>
+                            <img src="/images/kindpng_199151.png" alt="smile">
+                        </div>
+                        <p id="text">We use your Email only for newsletter.</p>
+                        <input type="email" placeholder="news@yanchuk.com">
+                    </div>
+                    <div class="license">
+                        <hr>
+                        <p>© 2022 Yanchuk, All Rights Reserved.</p>
+                    </div>
+                    <ion-icon name="navigate-circle-outline" class="back-flip-button"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="scripts/index_script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

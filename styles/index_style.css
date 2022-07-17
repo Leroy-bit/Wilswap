@@ -1,0 +1,522 @@
+/* Connect fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Rubik&family=Montserrat&display=swap');
+
+/* Connect fonts */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 960px;
+    background: #131620;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFFE5;
+    width: 1000px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+nav .connect_wallet_button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(98.75deg, #277DD4 -34.3%, #3D7B9C 111.29%);
+    border-radius: 50px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav .connect_wallet_button .wallet-icon{
+    width: 18px;
+    height: 18px;
+}
+
+nav .menu {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 17px;
+}
+
+nav .menu span {
+    padding: 10px;
+    border-radius: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+nav .menu span:hover {
+    background: rgba(206, 207, 209, 0.15);
+}
+
+header .menu-hr {
+    position: absolute;
+    top: 55px;
+    width: 1000px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+header .smoke {
+    position: absolute;
+    height: 964px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+header .text-best {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+header .text-regular {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FFFFFF66;
+    z-index: 1;
+}
+
+header .card {
+    position: relative;
+    padding: 0px 20px;
+    width: 440.64px;
+    height: 322.72px;
+    top: 30px;
+    background: linear-gradient(126.43deg, #FFFFFF 0%, #DADADA 135.39%);
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    transform: matrix(1, -0.21, -0.03, 0.98, 0, 0);
+    z-index: 2;
+}
+
+header .card #card-name {
+    font-weight: 600;
+    font-size: 23px;
+}
+
+header .card img {
+    transform: matrix(1, 0.15, -0.03, 0.98, 0, 0);
+    position: relative;
+    top: 85px;
+    left: 370px;
+}
+
+header .card-behind {
+    position: absolute;
+    width: 480.64px;
+    height: 322.72px;
+    top: 363px;
+    margin-left: 10px;
+    background: linear-gradient(45deg, #585858 0%, #ffffff 135.39%);
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    transform: matrix(1, -0.21, -0.03, 0.98, 0, 0);
+    z-index: 1;
+}
+
+header .card #card-date {
+    position: relative;
+    top: 140px;
+    left: 30px;
+    font-size: 20px;
+}
+
+header .phrases {
+    position: relative;
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    top: 100px;
+}
+
+header .phrases div {
+    position: relative;
+    width: 250px;
+    font-size: 26px;
+    color: #FFFFFF;
+}
+
+header .phrases div hr {
+    position: relative;
+    width: 105%;
+    color: #FFFFFF40;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1880px;
+}
+
+main #swap-title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #131620;
+    margin-bottom: 10px;
+}
+
+main #swap-text {
+    font-weight: 500;
+    font-size: 22px;
+    color: rgba(19, 22, 32, 0.8);
+    margin: 0;
+}
+
+main #swap-link {
+    color: #277DD4;
+    font-size: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    padding: 7px 3px 7px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+main #swap-link:hover {
+    background: rgba(94, 94, 94, 0.15);
+}
+
+main #swap-link ion-icon {
+    width: 23px;
+    height: 23px;
+    transition: 0.6s;
+}
+
+main #swap-link:hover ion-icon {
+    transform: rotate(360deg);
+}
+
+/* Explosion */
+
+main .explosion {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    width: 85%;
+    z-index: 0;
+    overflow: hidden;
+    padding-right: 15%;
+}
+
+main .explosion .eth {
+    position: relative;
+    z-index: 1;
+    right: 50px;
+}
+
+main .explosion .explosion-element {
+    width: 30%;
+}
+
+main .explosion .explosion-element .explosion-image {
+    position: relative;
+    transform: scale(0.9);
+}
+
+main .explosion .explosion-element .coin {
+    position: relative;
+    top: -600px;
+    left: 160px;
+    transform: scale(0.9);
+}
+
+/* Other */
+
+main .phrases {
+    position: relative;
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    top: 100px;
+    margin-top: 600px;
+}
+
+main .phrases div {
+    position: relative;
+    width: 250px;
+    font-size: 26px;
+    color: #000000;
+}
+
+main .phrases div hr {
+    position: relative;
+    width: 105%;
+    color: #00000040;
+}
+
+/* Flipping blocks */
+
+main .flipping-blocks {
+    position: relative;
+    width: 1050px;
+    top: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flip-container {
+	perspective: 2000px;
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+    border-radius: 40px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.front .front-flip-button, .back .back-flip-button {
+    margin: 0px 20px 20px 0px;
+    transform: rotate(-70deg);
+    transition: 0.4s;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+}
+
+.front .front-flip-button:hover, .back .back-flip-button:hover {
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
+main .flip-container, main .front, main .back {
+	width: 500px;
+	height: 700px;
+}
+
+main .front {
+    background-size: 500px 700px;
+    color: #FFFFFF;
+    font-size: 65px;
+}
+
+main .front p {
+    margin: 85px;
+}
+
+main .back {
+    background-color: #FFFFFF;
+    font-size: 65px;
+}
+
+main .back h1 {
+    font-size: 65px;
+    margin: 85px 85px 30px 85px;
+}
+
+main .back p {
+    font-size: 43px;
+    margin: 0px 85px 85px 85px;
+}
+
+.flipper .liquidity {
+    background-image: url(/images/flip-liquidity.png);
+}
+
+.flipper .trade {
+    background-image: url(/images/flip-trade.png);
+}
+
+/* Footer */
+
+footer {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .flip-container, footer .back,  footer .front{
+    width: 1050px;
+    height: 550px;
+    border-radius: 40px;
+}
+
+footer .front, footer .back {
+    background-color: #131620;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+}
+
+.useful-info {
+    width: 890px;
+    margin: 80px 80px 0px 80px;
+    display: flex;
+    gap: 80px;
+}
+
+.useful-info .info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 250px;
+}
+
+.useful-info .info-block a, .useful-info .info-block p {
+    color: #FFFFFFB2;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.useful-info .info-block .socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.useful-info .info-block .socials img {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+footer .front .license, footer .back .license {
+    position: absolute;
+    width: 890px;
+    top: 470px;
+    margin: 0px 80px 10px 80px;
+}
+
+footer .front .license hr, footer .back .license hr {
+    border: 1px solid #D9D9D940;
+    position: relative;
+}
+
+footer .front .license p, footer .back .license p {
+    position: relative;
+    color: #FFFFFF40;
+}
+
+footer .back .email-info {
+    margin: 80px;
+}
+
+footer .back .email-info div {
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+    gap: 30px;
+}
+
+footer .email-info #text {
+    color: #FFFFFF80;
+    font-size: 20px;
+}
+
+footer .back .email-info div p {
+    margin: 0;
+}
+
+footer .back .email-info div img {
+    position: relative;
+    height: 60px;
+    width: 60px;
+}
+
+footer .back .email-info input[type="email"] {
+    width: 380px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+footer .back .email-info input[type="email"]:focus {
+    border-radius: 20px;
+}
+
+footer .front .info-block #news-link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #277DD4;
+    width: 80px;
+    padding: 7px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+footer .front .info-block #news-link a {
+    color: #277DD4;
+    font-size: 22px;
+}
+
+footer .front .info-block #news-link:hover {
+    background: rgba(94, 94, 94, 0.15);
+}
+
+footer .front .info-block #news-link ion-icon {
+    width: 23px;
+    height: 23px;
+    transition: 0.6s;
+}
+
+footer .front .info-block #news-link:hover ion-icon {
+    transform: rotate(360deg);
+}
