@@ -8,7 +8,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }
@@ -16,6 +15,10 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+hr {
+    opacity: 0.25;
 }
 
 /* Header */
@@ -27,6 +30,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: bold;
 }
 
 nav {
@@ -92,14 +96,12 @@ header .smoke {
 
 header .text-best {
     font-size: 48px;
-    font-weight: bold;
     color: #FFFFFF;
     z-index: 1;
 }
 
 header .text-regular {
     font-size: 26px;
-    font-weight: bold;
     color: #FFFFFF66;
     z-index: 1;
 }
@@ -118,7 +120,6 @@ header .card {
 }
 
 header .card #card-name {
-    font-weight: 600;
     font-size: 23px;
 }
 
@@ -177,17 +178,17 @@ main {
     flex-direction: column;
     align-items: center;
     height: 1880px;
+    font-weight: bolder;
 }
 
 main #swap-title {
-    font-weight: 700;
     font-size: 36px;
     color: #131620;
     margin-bottom: 10px;
 }
 
-main #swap-text {
-    font-weight: 500;
+main .swap-text {
+    font-weight: bold;
     font-size: 22px;
     color: rgba(19, 22, 32, 0.8);
     margin: 0;
@@ -230,14 +231,12 @@ main .explosion {
     align-items: center;
     margin-top: 100px;
     width: 85%;
-    z-index: 0;
     overflow: hidden;
     padding-right: 15%;
 }
 
 main .explosion .eth {
     position: relative;
-    z-index: 1;
     right: 50px;
 }
 
@@ -255,6 +254,22 @@ main .explosion .explosion-element .coin {
     top: -600px;
     left: 160px;
     transform: scale(0.9);
+}
+
+main .explosion .bnb .coin, main .explosion .matic .coin {
+    z-index: 2;
+}
+
+main .explosion .eth .coin {
+    z-index: 3;
+}
+
+main .explosion .bnb .explosion-image, main .explosion .matic .explosion-image {
+    z-index: 0;
+}
+
+main .explosion .eth .explosion-image {
+    z-index: 1;
 }
 
 /* Other */
@@ -382,6 +397,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 footer .flip-container, footer .back,  footer .front{
