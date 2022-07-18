@@ -74,10 +74,12 @@ nav .menu span {
     border-radius: 15px;
     transition: 0.4s;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 nav .menu span:hover {
     background: rgba(206, 207, 209, 0.15);
+    opacity: 1;
 }
 
 header .menu-hr {
