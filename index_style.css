@@ -9,7 +9,6 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     -webkit-tap-highlight-color: none;
-    overflow-x: hidden;
 }
 
 a {
@@ -25,12 +24,16 @@ hr {
 
 header {
     width: 100%;
-    height: 960px;
     background: #131620;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: 900;
+    padding-bottom: 200px;
+    background-image: url(images/Smoke.png);
+    background-size: 900px 102%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 nav {
@@ -163,13 +166,6 @@ header .mobile-menu span:hover {
     opacity: 1;
 }
 
-header .smoke {
-    position: absolute;
-    height: 964px;
-    opacity: 0.7;
-    z-index: 0;
-}
-
 header .text-best {
     font-size: 48px;
     color: #FFFFFF;
@@ -228,10 +224,12 @@ header .card #card-date {
 
 header .phrases {
     position: relative;
-    width: 50%;
-    min-width: 550px;
+    width: 60%;
+    min-width: 250px;
+    gap: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     top: 100px;
 }
 
@@ -356,10 +354,12 @@ main .explosion .eth .explosion-image {
 
 main .phrases {
     position: relative;
-    width: 50%;
-    min-width: 550px;
+    width: 60%;
+    min-width: 250px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 main .phrases div {
@@ -748,7 +748,8 @@ footer .container .license {
 
     footer .flip-container .useful-info {
         flex-direction: column-reverse;
-        margin-left: 130px;
+        margin: 55px 0% 0px 20%;
+        width: 80%;
     }
 }
 
@@ -761,6 +762,198 @@ footer .container .license {
 @media screen and (max-width: 700px) {
     main .explosion .eth {
         margin-right: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header .card, header .card-behind {
+        transform: matrix(0.9, -0.21, -0.03, 0.882, 0, 0);
+    }
+
+    main .explosion {
+        min-height: 570px;
+        max-height: 570px;
+    }
+
+    main .explosion .eth {
+        transform: scale(0.85);
+        margin-right: 350px;
+    }
+
+    main .explosion .explosion-element {
+        top: 180px;
+    }
+    
+    main .flip-container, main .front, main .back {
+        width: 400px;
+        height: 600px;
+    }
+    
+    main .front {
+        background-size: 400px 600px;
+        font-size: 60px;
+    }
+    
+    main .front p {
+        margin: 65px;
+    }
+    
+    main .back {
+        font-size: 60px;
+    }
+    
+    main .back h1 {
+        font-size: 60px;
+        margin: 65px 65px 20px 65px;
+    }
+    
+    main .back p {
+        font-size: 35px;
+        margin: 0px 65px 10px 65px;
+    }
+    
+    main .back .connect_wallet_button {
+        margin-left: 65px;
+    }
+
+    footer .footer-block {
+        width: 400px;
+    }
+    
+    footer .footer-block .flip-container, footer .footer-block .back, footer .footer-block .front{
+        height: 600px;
+    }
+
+    footer .flip-container .useful-info {
+        margin: 50px 0% 0px 17%;
+        width: 83%;
+    }
+
+    footer .back .email-info {
+        margin: 70px 10% 0px 10%;
+    }
+
+    footer .back .email-info div {
+        font-size: 40px;
+    }
+
+    footer .back .email-info input[type="email"] {
+        width: 280px;
+        height: 50px;
+    }
+
+    footer .container {
+        width: 400px;
+        height: 600px;
+    }
+    
+    footer .container .useful-info {
+        margin: 30px 10% 250px 10%;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header .card, header .card-behind {
+        transform: matrix(0.7, -0.21, -0.03, 0.686, 0, 0);
+    }
+
+    main .explosion {
+        min-height: 500px;
+        max-height: 500px;
+    }
+    
+    main .explosion .explosion-element {
+        top: 150px;
+    }
+
+    main .explosion .eth {
+        transform: scale(0.7);
+        margin-right: 300px;
+    }
+
+    main .flip-container, main .front, main .back {
+        width: 350px;
+        height: 550px;
+    }
+    
+    main .front {
+        background-size: 350px 550px;
+        font-size: 55px;
+    }
+    
+    main .front p {
+        margin: 55px;
+    }
+    
+    main .back {
+        font-size: 55px;
+    }
+    
+    main .back h1 {
+        font-size: 55px;
+        margin: 55px 55px 15px 55px;
+    }
+    
+    main .back p {
+        font-size: 30px;
+        margin: 0px 55px 10px 55px;
+    }
+    
+    main .back .connect_wallet_button {
+        margin-left: 55px;
+    }
+
+    footer .footer-block {
+        width: 350px;
+    }
+    
+    footer .footer-block .flip-container, footer .footer-block .back, footer .footer-block .front{
+        height: 550px;
+    }
+
+    footer .back .email-info {
+        margin: 50px 10% 0px 10%;
+    }
+
+    footer .back .email-info div {
+        font-size: 33px;
+    }
+
+    footer .back .email-info input[type="email"] {
+        width: 230px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    footer .container {
+        width: 350px;
+        height: 550px;
+    }
+    
+    footer .container .useful-info {
+        margin: 30px 10% 200px 10%;
+        width: 80%;
+    }
+
+    footer .container .license {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main .explosion {
+        min-height: 400px;
+        max-height: 400px;
+    }
+    
+    main .explosion .explosion-element {
+        top: 100px;
+    }
+
+    main .explosion .eth {
+        transform: scale(0.55);
+        margin-right: 250px;
     }
 }
 
