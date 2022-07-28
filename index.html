@@ -13,14 +13,66 @@
         <img src="images/Smoke.png" alt="smoke" class="smoke">
         <nav>
             <h1>Yanchuk</h1>
-            <div class="menu">
-                <span>Products</span>
-                <span>Developers</span>
-                <span>About us</span>
+            <div class="menu none">
+                <span class="menu-buttons">Products</span>
+                <span class="menu-buttons">Developers</span>
+                <span class="menu-buttons">About us</span>
             </div>
-            <div class="connect_wallet_button"><p>Connect</p><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon></div>
+            <div class="connect_wallet_button none">Connect<ion-icon name="wallet-outline" class="wallet-icon"></ion-icon></div>
+            <ion-icon name="ellipsis-horizontal" class="mobile-menu-icon"></ion-icon>
         </nav>
         <hr class="menu-hr">
+        <div class="mobile-menu">
+            <span class="mobile-menu-buttons">Products</span>
+            <span class="mobile-menu-buttons">Developers</span>
+            <span class="mobile-menu-buttons">About us</span>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a href="swap.html">
+                <ion-icon name="swap-vertical-outline"></ion-icon>
+                <p>Swap</p>
+            </a>
+            <a>
+                <ion-icon name="card-outline"></ion-icon>
+                <p>Card</p>
+            </a>
+            <a>
+                <ion-icon name="logo-yahoo"></ion-icon>
+                <p>Pay</p>
+            </a>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a href="https://github.com/Leroy-bit/Wilswap">
+                <ion-icon name="logo-github"></ion-icon>
+                <p>GitHub</p>
+            </a>
+            <a>
+                <ion-icon name="reader-outline"></ion-icon>
+                <p>Documentation</p>
+            </a>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a>
+                <img src="images/Medium.png" alt="medium">
+                <p>Medium</p>
+            </a>
+            <a>
+                <img src="images/Telegram_1.png" alt="tg">
+                <p>Telegram</p>
+            </a>
+            <a>
+                <img src="images/Twitter_1.png" alt="twitter">
+                <p>Twitter</p>
+            </a>
+            <a>
+                <img src="images/Discord_1.png" alt="discord">
+                <p>Discord</p>
+            </a>
+            <a>
+                <ion-icon name="logo-yahoo"></ion-icon>
+                <p>We</p>
+            </a>
+        </div>
         <div class="text-regular">The crypto card</div>
         <div class="text-best">Best speed.</div>
         <div class="text-best">Best quality.</div>
@@ -98,6 +150,7 @@
                         <div>
                             <h1>Earn.</h1>
                             <p>Easy trade. Easy swap. Easy earn with our system.</p>
+                            <div class="connect_wallet_button">Connect<ion-icon name="wallet-outline" class="wallet-icon"></ion-icon></div>
                         </div>
                         <ion-icon name="navigate-circle" class="back-flip-button"></ion-icon>
                     </div>
@@ -106,61 +159,89 @@
         </div>
     </main>
     <footer>
-        <div class="flip-container">
-            <div class="flipper">
-                <div class="front">
-                    <div class="useful-info">
-                        <div class="info-block">
-                            <h2>Products</h2>
-                            <a href="#">Card</a>
-                            <a href="swap.html">Swap</a>
-                            <a href="#">Liquidity</a>
-                        </div>
-                        <div class="info-block">
-                            <h2>Developers</h2>
-                            <a href="#">Documentation</a>
-                            <a href="https://github.com/Leroy-bit/Wilswap">GitHub</a>
-                        </div>
-                        <div class="info-block">
-                            <h2>Support</h2>
-                            <a href="#">Help</a>
-                        </div>
-                        <div class="info-block">
-                            <h2>Newsletter to you</h2>
-                            <p>We'll send news about our project.</p>
-                            <span id="news-link"><a href="#">Click</a><ion-icon name="chevron-forward-outline"></ion-icon></span>
-                            <div class="socials">
-                                <img src="images/Telegram.icon.png" alt="telegram">
-                                <img src="images/Twitter.icon.png" alt="twitter">
-                                <img src="images/Discord.icon.png" alt="discord">
-                                <img src="images/Youtube.icon.png" alt="youtube">
+        <div class="footer-block">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <div class="useful-info">
+                            <div class="info-block none">
+                                <h2>Products</h2>
+                                <a href="#">Card</a>
+                                <a href="swap.html">Swap</a>
+                                <a href="#">Liquidity</a>
+                            </div>
+                            <div class="info-block none">
+                                <h2>Developers</h2>
+                                <a href="#">Documentation</a>
+                                <a href="https://github.com/Leroy-bit/Wilswap">GitHub</a>
+                            </div>
+                            <div class="info-block">
+                                <h2>Support</h2>
+                                <a href="#">Help</a>
+                            </div>
+                            <div class="info-block">
+                                <h2>Newsletter to you</h2>
+                                <p>We'll send news about our project.</p>
+                                <span id="news-link">Click<ion-icon name="chevron-forward-outline"></ion-icon></span>
+                                <div class="socials none">
+                                    <img src="images/Telegram.icon.png" alt="telegram">
+                                    <img src="images/Twitter.icon.png" alt="twitter">
+                                    <img src="images/Discord.icon.png" alt="discord">
+                                    <img src="images/Youtube.icon.png" alt="youtube">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="license">
-                        <hr>
-                        <p>© 2022 Yanchuk, All Rights Reserved.</p>
-                    </div>
-                    <ion-icon name="navigate-circle-outline" class="front-flip-button"></ion-icon>
-                </div>
-                <div class="back">
-                    <div class="email-info">
-                        <div>
-                            <p>Your Email.</p>
-                            <img src="images/kindpng_199151.png" alt="smile">
+                        <div class="license none">
+                            <hr>
+                            <p>© 2022 Yanchuk, All Rights Reserved.</p>
                         </div>
-                        <p id="text">We use your Email only for newsletter.</p>
-                        <input type="email" placeholder="news@yanchuk.com">
+                        <ion-icon name="navigate-circle-outline" class="front-flip-button"></ion-icon>
                     </div>
-                    <div class="license">
-                        <hr>
-                        <p>© 2022 Yanchuk, All Rights Reserved.</p>
+                    <div class="back">
+                        <div class="email-info">
+                            <div>
+                                <p>Your Email.</p>
+                                <img src="images/kindpng_199151.png" alt="smile">
+                            </div>
+                            <p id="text">We use your Email only for newsletter.</p>
+                            <input type="email" placeholder="news@yanchuk.com">
+                        </div>
+                        <div class="license none">
+                            <hr>
+                            <p>© 2022 Yanchuk, All Rights Reserved.</p>
+                        </div>
+                        <ion-icon name="navigate-circle-outline" class="back-flip-button"></ion-icon>
                     </div>
-                    <ion-icon name="navigate-circle-outline" class="back-flip-button"></ion-icon>
+                </div>
+            </div>
+            <div class="container">
+                <div class="useful-info">
+                    <div class="info-block">
+                        <h2>Products</h2>
+                        <a href="#">Card</a>
+                        <a href="swap.html">Swap</a>
+                        <a href="#">Liquidity</a>
+                    </div>
+                    <div class="info-block">
+                        <h2>Developers</h2>
+                        <a href="#">Documentation</a>
+                        <a href="https://github.com/Leroy-bit/Wilswap">GitHub</a>
+                    </div>
+                </div>
+                <div class="socials">
+                    <img src="images/Telegram.icon.png" alt="telegram">
+                    <img src="images/Twitter.icon.png" alt="twitter">
+                    <img src="images/Discord.icon.png" alt="discord">
+                    <img src="images/Youtube.icon.png" alt="youtube">
+                </div>
+                <div class="license">
+                    <hr>
+                    <p>© 2022 Yanchuk, All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
+    <div class="blur"></div>
     <script type="module" src="scripts/index_script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -8,8 +8,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: none;
+    overflow-x: hidden;
 }
 
 a {
@@ -39,13 +39,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     color: #FFFFFFE5;
-    width: 1000px;
+    width: 70%;
     height: 50px;
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
-nav .connect_wallet_button {
+.connect_wallet_button {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -55,9 +55,10 @@ nav .connect_wallet_button {
     height: 40px;
     cursor: pointer;
     font-size: 16px;
+    color: #FFFFFFE5;
 }
 
-nav .connect_wallet_button .wallet-icon{
+.connect_wallet_button .wallet-icon{
     width: 18px;
     height: 18px;
 }
@@ -82,11 +83,84 @@ nav .menu span:hover {
     opacity: 1;
 }
 
+nav .mobile-menu-icon {
+    display: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
 header .menu-hr {
     position: absolute;
     top: 55px;
-    width: 1000px;
+    width: 70%;
     color: rgba(255, 255, 255, 0.25);
+}
+
+header .menu-options {
+    position: absolute;
+    width: 70%;
+    height: 50px;
+    background: #131620;
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0px 0px 20px 20px / 0px 0px 20px 20px;
+    top: 64px;
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+header .menu-options a {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 18px;
+    gap: 10px;
+    padding: 0px 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 15px;
+}
+
+header .menu-options a:hover {
+    background: rgba(206, 207, 209, 0.15);
+}
+
+header .menu-options a img {
+    height: 20px;
+}
+
+header .menu-options a ion-icon {
+    transform: scale(1.2);
+}
+
+header .mobile-menu {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: #171A24;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 4;
+}
+
+header .mobile-menu span {
+    padding: 15px;
+    border-radius: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+header .mobile-menu span:hover {
+    background: rgba(206, 207, 209, 0.15);
+    opacity: 1;
 }
 
 header .smoke {
@@ -154,7 +228,8 @@ header .card #card-date {
 
 header .phrases {
     position: relative;
-    width: 700px;
+    width: 50%;
+    min-width: 550px;
     display: flex;
     justify-content: space-between;
     top: 100px;
@@ -179,7 +254,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 1880px;
     font-weight: 900;
 }
 
@@ -227,23 +301,27 @@ main #swap-link:hover ion-icon {
 /* Explosion */
 
 main .explosion {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
-    width: 85%;
+    width: 90%;
+    min-height: 700px;
+    max-height: 700px;
     overflow: hidden;
-    padding-right: 15%;
+    padding: 0% 5% 0% 5%;
 }
 
 main .explosion .eth {
     position: relative;
-    right: 50px;
+    margin-right: 70px;
 }
 
 main .explosion .explosion-element {
+    position: relative;
     width: 30%;
+    top: 200px;
+    right: 8%;
 }
 
 main .explosion .explosion-element .explosion-image {
@@ -278,11 +356,10 @@ main .explosion .eth .explosion-image {
 
 main .phrases {
     position: relative;
-    width: 700px;
+    width: 50%;
+    min-width: 550px;
     display: flex;
     justify-content: space-between;
-    top: 100px;
-    margin-top: 600px;
 }
 
 main .phrases div {
@@ -302,14 +379,18 @@ main .phrases div hr {
 
 main .flipping-blocks {
     position: relative;
-    width: 1050px;
-    top: 250px;
+    width: 90%;
+    max-width: 1100px;
+    top: 150px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 120px;
 }
 
 .flip-container {
 	perspective: 2000px;
+    margin-bottom: 50px;
 }
 
 .flipper {
@@ -380,7 +461,18 @@ main .back h1 {
 
 main .back p {
     font-size: 43px;
-    margin: 0px 85px 85px 85px;
+    margin: 0px 85px 10px 85px;
+}
+
+main .back .connect_wallet_button {
+    margin-left: 85px;
+    width: 160px;
+    height: 50px;
+    font-size: 22px;
+}
+
+main .back .wallet-icon {
+    transform: scale(1.3);
 }
 
 .flipper .liquidity {
@@ -394,7 +486,6 @@ main .back p {
 /* Footer */
 
 footer {
-    height: 600px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -402,8 +493,17 @@ footer {
     margin-top: 20px;
 }
 
-footer .flip-container, footer .back,  footer .front{
-    width: 1050px;
+footer .footer-block {
+    position: relative;
+    width: 90%;
+    max-width: 1050px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-block .flip-container, footer .footer-block .back, footer .footer-block .front{
+    width: 100%;
     height: 550px;
     border-radius: 40px;
 }
@@ -415,10 +515,10 @@ footer .front, footer .back {
 }
 
 .useful-info {
-    width: 890px;
-    margin: 55px 80px 0px 80px;
+    margin: 55px 10% 0px 10%;
+    width: 80%;
     display: flex;
-    gap: 80px;
+    justify-content: space-between;
 }
 
 .useful-info .info-block {
@@ -435,31 +535,31 @@ footer .front, footer .back {
     margin: 0;
 }
 
-.useful-info .info-block .socials {
+footer .socials {
     display: flex;
     gap: 10px;
     margin-top: 20px;
 }
 
-.useful-info .info-block .socials img {
-    height: 50px;
-    width: 50px;
+footer .socials img {
+    height: 60px;
+    width: 60px;
     cursor: pointer;
 }
 
-footer .front .license, footer .back .license {
+footer .license {
     position: absolute;
-    width: 890px;
+    width: 80%;
     top: 470px;
     margin: 0px 80px 10px 80px;
 }
 
-footer .front .license hr, footer .back .license hr {
+footer .license hr {
     border: 1px solid #D9D9D940;
     position: relative;
 }
 
-footer .front .license p, footer .back .license p {
+footer .license p {
     position: relative;
     color: #FFFFFF40;
 }
@@ -518,10 +618,6 @@ footer .front .info-block #news-link {
     cursor: pointer;
     transition: 0.4s;
     z-index: 2;
-}
-
-footer .front .info-block #news-link a {
-    color: #277DD4;
     font-size: 22px;
 }
 
@@ -537,4 +633,144 @@ footer .front .info-block #news-link ion-icon {
 
 footer .front .info-block #news-link:hover ion-icon {
     transform: rotate(360deg);
+}
+
+footer .container {
+    width: 500px;
+	height: 700px;
+    background-color: #131620;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    border-radius: 40px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    display: none;
+}
+
+footer .container .useful-info {
+    margin: 30px 10% 350px 10%;
+    width: 80%;
+}
+
+footer .container .license {
+    position: relative;
+    top: 0px;
+}
+
+.blur {
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    opacity: 0.7;
+    z-index: 3;
+}
+
+/* Adaptation */
+
+@media screen and (max-width: 1500px) {
+    main .explosion .explosion-element {
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    main .explosion .explosion-element {
+        right: 14%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    main .explosion .explosion-element {
+        right: 18%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    main .explosion .explosion-element {
+        right: 22%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav {
+        width: 90%;
+    }
+    
+    nav .none {
+        display: none;
+    }
+
+    nav .mobile-menu-icon {
+        display: block;
+    }
+
+    header .menu-hr {
+        width: 90%;
+    }
+
+    main .explosion .bnb, main .explosion .matic {
+        display: none;
+    }
+
+    main .explosion .eth {
+        margin-right: 200px;
+    }
+
+    footer .container {
+        display: flex;
+    }
+
+    footer .flip-container .none {
+        display: none;
+    }
+
+    footer .footer-block {
+        width: 500px;
+    }
+    
+    footer .footer-block .flip-container, footer .footer-block .back, footer .footer-block .front{
+        width: 100%;
+        height: 700px;
+    }
+
+    footer .back .email-info {
+        margin: 80px 10% 0px 10%;
+    }
+
+    footer .back .email-info div {
+        font-size: 50px;
+    }
+
+    footer .flip-container .useful-info {
+        flex-direction: column-reverse;
+        margin-left: 130px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main .explosion .eth {
+        margin-right: 300px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main .explosion .eth {
+        margin-right: 400px;
+    }
+}
+
+/* Animations */
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
