@@ -177,6 +177,9 @@ header .text-regular {
     color: #FFFFFF66;
     z-index: 1;
 }
+/*
+
+Not img card
 
 header .card {
     position: relative;
@@ -220,7 +223,7 @@ header .card #card-date {
     top: 140px;
     left: 30px;
     font-size: 20px;
-}
+}*/
 
 header .phrases {
     position: relative;
@@ -230,7 +233,7 @@ header .phrases {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    top: 100px;
+    top: 40px;
 }
 
 header .phrases div {
@@ -266,20 +269,22 @@ main .swap-text {
     font-size: 22px;
     color: rgba(19, 22, 32, 0.8);
     margin: 0;
+    margin-bottom: 10px;
 }
 
 main #swap-link {
+    position: relative;
     color: #277DD4;
     font-size: 28px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 30px;
     padding: 7px 3px 7px 10px;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.4s;
     z-index: 2;
+    bottom: 5px;
 }
 
 main #swap-link:hover {
@@ -304,8 +309,8 @@ main .explosion {
     justify-content: center;
     align-items: center;
     width: 90%;
-    min-height: 700px;
-    max-height: 700px;
+    min-height: 680px;
+    max-height: 680px;
     overflow: hidden;
     padding: 0% 5% 0% 5%;
 }
@@ -766,8 +771,12 @@ footer .container .license {
 }
 
 @media screen and (max-width: 600px) {
-    header .card, header .card-behind {
+    /*header .card, header .card-behind {
         transform: matrix(0.9, -0.21, -0.03, 0.882, 0, 0);
+    }*/
+
+    header .card-img {
+        transform: scale(0.9);
     }
 
     main .explosion {
@@ -854,8 +863,12 @@ footer .container .license {
 }
 
 @media screen and (max-width: 500px) {
-    header .card, header .card-behind {
+    /*header .card, header .card-behind {
         transform: matrix(0.7, -0.21, -0.03, 0.686, 0, 0);
+    }*/
+
+    header .card-img {
+        transform: scale(0.75);
     }
 
     main .explosion {
