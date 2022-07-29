@@ -1,14 +1,28 @@
 /* Connect fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Rubik&family=Montserrat&display=swap');
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/Montserrat.eot');
+	src: local('☺'), url('../fonts/Montserrat.woff') format('woff'), url('../fonts/Montserrat.ttf') format('truetype'), url('../fonts/Montserrat.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/montserrat_bold.eot');
+	src: local('☺'), url('../fonts/montserrat_bold.woff') format('woff'), url('../fonts/montserrat_bold.ttf') format('truetype'), url('../fonts/montserrat_bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
 
 /* Connect fonts */
 
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
     -webkit-tap-highlight-color: transparent;
+    font-family: 'Montserrat';
 }
 
 a {
@@ -28,9 +42,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: 900;
     padding-bottom: 200px;
-    background-image: url(images/Smoke.png);
+    background-image: url(../images/Smoke.png);
     background-size: 900px 102%;
     background-position: center;
     background-repeat: no-repeat;
@@ -265,7 +278,7 @@ main #swap-title {
 }
 
 main .swap-text {
-    font-weight: 900;
+    font-weight: 500;
     font-size: 22px;
     color: rgba(19, 22, 32, 0.8);
     margin: 0;
@@ -285,6 +298,7 @@ main #swap-link {
     transition: 0.4s;
     z-index: 2;
     bottom: 5px;
+    font-weight: 500;
 }
 
 main #swap-link:hover {
@@ -413,6 +427,7 @@ main .flipping-blocks {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    font-weight: 500;
 }
 
 .front {
@@ -481,11 +496,11 @@ main .back .wallet-icon {
 }
 
 .flipper .liquidity {
-    background: url(images/flip-liquidity.png);
+    background: url(../images/flip-liquidity.png);
 }
 
 .flipper .trade {
-    background: url(images/flip-trade.png);
+    background: url(../images/flip-trade.png);
 }
 
 /* Footer */
@@ -536,19 +551,23 @@ footer .front, footer .back {
 .useful-info .info-block a, .useful-info .info-block p {
     color: #FFFFFFB2;
     font-size: 18px;
-    font-weight: 600;
     margin: 0;
+    font-weight: 500;
+}
+
+.useful-info .info-block h2 {
+    font-weight: 500;
 }
 
 footer .socials {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     margin-top: 20px;
 }
 
 footer .socials img {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     cursor: pointer;
 }
 
@@ -656,6 +675,7 @@ footer .container {
 footer .container .useful-info {
     margin: 30px 10% 350px 10%;
     width: 80%;
+    gap: 40px;
 }
 
 footer .container .license {
