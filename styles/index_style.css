@@ -912,7 +912,7 @@ footer .container .license {
     
     main .front {
         background-size: 350px 550px;
-        font-size: 55px;
+        font-size: 52px;
     }
     
     main .front p {
@@ -920,11 +920,11 @@ footer .container .license {
     }
     
     main .back {
-        font-size: 55px;
+        font-size: 52px;
     }
     
     main .back h1 {
-        font-size: 55px;
+        font-size: 52px;
         margin: 55px 55px 15px 55px;
     }
     
@@ -970,7 +970,8 @@ footer .container .license {
     }
 
     footer .container .license {
-        font-size: 15px;
+        font-size: 14px;
+        top: 10px;
     }
 }
 
@@ -987,6 +988,11 @@ footer .container .license {
     main .explosion .eth {
         transform: scale(0.55);
         margin-right: 250px;
+    }
+
+    header .mobile-menu span {
+        padding: 13px;
+        font-size: 16px;
     }
 }
 
