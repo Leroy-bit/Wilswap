@@ -1,29 +1,33 @@
 // define all global variables
 
 let currency = document.getElementsByClassName('currency-choice')
-let swapContent = document.getElementsByClassName('swap-content')[0];
 let swapSearch = document.getElementsByClassName('swap-search')[0];
-let backButton = document.getElementsByClassName('back-button')[0];
 let to_sell_label = document.getElementById("currency-number-sell")
 let to_buy_label = document.getElementById("currency-number-buy")
 let listNumber = 0
 let accounts
-let available_coins = document.getElementsByClassName('available-coin')
+let available_coins = document.getElementsByClassName('available-coin');
+let coin_prices = document.getElementsByClassName('search-price');
+let coin_name = document.getElementsByClassName('coin-name');
 let sell_currency = "ETH"
 let buy_currency = "ETH"
 let setting_exchange_currency = "USDT"
 let exchange_rates = {}
 let li = document.getElementsByClassName('coin-li');
-let extraInfo = document.getElementsByClassName('swap-trade-sell-info')[0];
+let extraInfo = document.getElementsByClassName('swap-trade-sell-info');
 let searchCoins = document.getElementById('input-coins');
-let account_block = document.getElementsByClassName('account-block')[0]
-let account_adress_element = document.getElementsByClassName('account-adress')[0]
+let account_block = document.getElementsByClassName('account-block')[0];
+let account_adress_element = document.getElementsByClassName('account-adress')[0];
 let symbols_for_sell_label = ['0','1','2','3','4','5','6','7','8','9','.'];
-let menuMobileAction = document.getElementsByClassName('menu-mobile')[0];
+/*let menuMobileAction = document.getElementsByClassName('menu-mobile')[0];
 let menuMobileIcon = document.getElementsByClassName('menu-mobile-icon');
-let menuMobile = document.getElementsByClassName('menu')[1];
-let blurBlock = document.getElementsByClassName('blur')[0]
-let connect_wallet_buttons = document.getElementsByClassName('connect_wallet_button')
+let menuMobile = document.getElementsByClassName('menu')[1];*/
+let blur_block = document.getElementsByClassName('blur')[0]
+let connect_wallet_buttons = document.getElementsByClassName('connect_wallet_button');
+let menu_buttons = document.getElementsByClassName('menu-buttons');
+let menu_options = document.getElementsByClassName('menu-options');
+let mobile_menu = document.getElementsByClassName('mobile-menu')[0];
+let mobile_menu_icon = document.getElementsByClassName('mobile-menu-icon')[0];
 
 // get cryptocurrency exchange rate
 
@@ -42,7 +46,23 @@ async function exchange_rate_tick(asynch = true) {
     }
     xmlHttp.open( "GET", 'https://api.binance.com/api/v3/ticker/price?symbols=' + JSON.stringify(symbols), asynch )
     xmlHttp.send()
-    extraInfo.innerHTML = '<p>'+ sell_currency +'</p><p class="numbers">' + String(exchange_rates[sell_currency]) + " " + setting_exchange_currency +'</p>';
+    for (let i = 0; i < extraInfo.length; i++) {
+        if (i == 0) {
+            if (String(exchange_rates[sell_currency]) != 'undefined') {
+                extraInfo[i].innerHTML = '<p class="numbers">' + String(exchange_rates[sell_currency]) + " " + setting_exchange_currency +'</p>';
+            }
+        }
+        else {
+            if (String(exchange_rates[buy_currency]) != 'undefined') {
+                extraInfo[i].innerHTML = '<p class="numbers">' + String(exchange_rates[buy_currency]) + " " + setting_exchange_currency +'</p>';
+            }
+        }
+    }
+    for (let i = 0; i < coin_prices.length; i++) {
+        if (String(exchange_rates[available_coins[i].id]) != 'undefined') {
+            coin_prices[i].innerHTML = String(exchange_rates[available_coins[i].id]) + " " + setting_exchange_currency;
+        }
+    }
     to_sell_input_change()
 }
 
@@ -85,11 +105,13 @@ async function get_accounts(connect) {
             else {
                 for (let i = 0; i < connect_wallet_buttons.length; i++) { // make swap button invisible
                     if (connect_wallet_buttons[i].classList.contains('swap-button')) {
-                        connect_wallet_buttons[i].style.display = 'none'
+                        connect_wallet_buttons[i].style.display = 'none';
                     } else {
-                        connect_wallet_buttons[i].style.display = 'flex'
+                        connect_wallet_buttons[i].style.display = 'flex';
                     }
-                    
+                }
+                if (window.innerWidth < 900) {  // for adaptation on swap page
+                    connect_wallet_buttons[0].style.display = 'none';
                 }
             }
         } catch (error) {
@@ -102,6 +124,14 @@ async function get_accounts(connect) {
     }
 }
 
+window.addEventListener("resize", () => {  // for adaptation on swap page
+    if (window.innerWidth > 900 && account_block.style.display != 'flex') {
+        connect_wallet_buttons[0].style.display = 'flex';
+    } else {
+        connect_wallet_buttons[0].style.display = 'none';
+    }
+});
+
 for (let i = 0; i < connect_wallet_buttons.length; i++) {
     connect_wallet_buttons[i].addEventListener('click', get_accounts)
 }
@@ -112,44 +142,41 @@ import generateIdenticon from "./handmade-jazzicon.js"; // Get avatar
 document.addEventListener("DOMContentLoaded", function() {
     get_accounts() // Check a connection to Metamask
     // Set a null values to input lables
-    to_sell_label.value = 0 
-    to_buy_label.innerHTML = 0
+    to_sell_label.value = '0';
+    to_buy_label.innerHTML = '0.000';
     
 })
-let exchange_rate_timer_id = setInterval(exchange_rate_tick, 10000)  // Create a timer for get the exchange rates
+let exchange_rate_timer_id = setInterval(exchange_rate_tick, 10000);  // Create a timer for get the exchange rates
 
 
 for (let i=0; i<currency.length; i++) {
     currency[i].addEventListener('click', function() {
-        swapContent.style.display = 'none';
         swapSearch.style.display = 'flex';
+        blur_block.style.display = 'block';
         if (this.classList.contains("sell")) {
-            listNumber = 0
+            listNumber = 0;
         }
         else {
-            listNumber = 1
+            listNumber = 1;
         }
     });
 }
 
-backButton.addEventListener('click', function() { 
-    swapContent.style.display = 'flex';
-    swapSearch.style.display = 'none';
-});
-
 for (let i = 0; i < li.length; i++) {
     li[i].addEventListener('click', function() {
         let exchange_rate = exchange_rates[this.id]
-        currency[listNumber].innerHTML = this.innerHTML + '<ion-icon name="chevron-down-outline" class="list-arrow"></ion-icon>';
+        currency[listNumber].innerHTML = coin_name[i].innerHTML + '<ion-icon name="chevron-down-outline" class="list-arrow"></ion-icon>';
+        if (String(exchange_rate) != 'undefined') {
+            extraInfo[listNumber].innerHTML = '<p class="numbers">' + String(exchange_rate) + " " + setting_exchange_currency +'</p>';
+        }
         if (listNumber == 0) {
-            extraInfo.innerHTML = '<p>'+ this.id +'</p><p class="numbers">' + String(exchange_rate) + " " + setting_exchange_currency +'</p>';
             sell_currency = this.id
         }
         else {
             buy_currency = this.id
         }
-        swapContent.style.display = 'flex';
         swapSearch.style.display = 'none';
+        blur_block.style.display = 'none';
         to_sell_input_change()
     })
 }
@@ -180,8 +207,6 @@ searchCoins.addEventListener('keyup', function() {
     showedLi = 0;
 });
 
-
-
 to_sell_label.addEventListener('keyup', function() { // Exchange input filter 
     if (symbols_for_sell_label.includes(this.value[this.value.length-1]) == false) {
         this.value = this.value.slice(0, -1);
@@ -189,7 +214,7 @@ to_sell_label.addEventListener('keyup', function() { // Exchange input filter
     if (this.value == "") {
         this.value = "0";
     }
-    if (this.value[0] == '0' && this.value.length > 1) {
+    if (this.value[0] == '0' && this.value.length > 1 && this.value[1] != '.') {
         this.value = this.value.substring(1);
     }
 });
@@ -210,8 +235,38 @@ to_sell_label.oninput = function() {
     to_sell_input_change(this.value)
 }
 
+// Main menu
 
-menuMobileAction.addEventListener('click', function() {
+for (let i = 0; i < menu_buttons.length; i++) {
+    menu_buttons[i].addEventListener('click', () => {
+        if (menu_options[i].style.display == 'none') {
+            for (var j = 0; j < menu_buttons.length; j++) {
+                if (j == i) {
+                    menu_options[j].style.display = 'flex';
+                    menu_options[j].style.animation = '0.8s show';
+                } else {
+                    menu_options[j].style.display = 'none';
+                }
+            }
+        } else {
+            menu_options[i].style.display = 'none';
+        }
+    });
+}
+
+mobile_menu_icon.addEventListener('click', () => {
+    mobile_menu.style.display = 'flex';
+    mobile_menu.style.animation = '0.8s show';
+    blur_block.style.display = 'block';
+});
+
+blur_block.addEventListener('click', () => {
+    mobile_menu.style.display = 'none';
+    swapSearch.style.display = 'none';
+    blur_block.style.display = 'none';
+});
+
+/*menuMobileAction.addEventListener('click', function() {
     if (menuMobileIcon[1].style.display == 'none') {
         this.style.background = '#000000';
         menuMobileIcon[0].style.display = 'none';
@@ -225,4 +280,4 @@ menuMobileAction.addEventListener('click', function() {
         menuMobile.style.display = 'none';
         blurBlock.style.display = 'none';
     }
-});
+});*/

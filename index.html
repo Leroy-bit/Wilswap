@@ -17,6 +17,11 @@
                 <span class="menu-buttons">Developers</span>
                 <span class="menu-buttons">About us</span>
             </div>
+            <div class="account-block none">
+                <div class="account-drop-down none">
+                    <span class="account-adress"></span>
+                </div>
+            </div>
             <div class="connect_wallet_button none">Connect<ion-icon name="wallet-outline" class="wallet-icon"></ion-icon></div>
             <ion-icon name="ellipsis-horizontal" class="mobile-menu-icon"></ion-icon>
         </nav>
@@ -98,11 +103,12 @@
         </div>
     </header>
     <main>
-        <p id="swap-title">Swap, send, use</p>
-        <p class="swap-text">For perfect experience.</p>
-        <p class="swap-text">Ever.</p>
+        <div class="swap-block" onclick="window.location = 'swap.html';"></div>
+        <p id="swap-title" onclick="window.location = 'swap.html';">Swap, send, use</p>
+        <p class="swap-text" onclick="window.location = 'swap.html';">For perfect experience.</p>
+        <p class="swap-text" onclick="window.location = 'swap.html';">Ever.</p>
         <span id="swap-link"><a href="swap.html">Swap</a><ion-icon name="chevron-forward-outline"></ion-icon></span>
-        <div class="explosion">
+        <div class="explosion" onclick="window.location = 'swap.html';">
             <div class="explosion-element bnb">
                 <img src="images/exploding_bnb.png" alt="exploding_bnb" class="explosion-image">
                 <img src="images/Bnb.png" alt="bnb" class="coin">
@@ -116,7 +122,7 @@
                 <img src="images/Matic.png" alt="matic" class="coin">
             </div>
         </div>
-        <div class="phrases">
+        <div class="phrases" onclick="window.location = 'swap.html';">
             <div>
                 <hr>
                 Swap your like tokens.

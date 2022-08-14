@@ -2,19 +2,36 @@
 
 @font-face {
 	font-family: 'Montserrat';
-	src: url('../fonts/Montserrat.eot');
-	src: local('☺'), url('../fonts/Montserrat.woff') format('woff'), url('../fonts/Montserrat.ttf') format('truetype'), url('../fonts/Montserrat.svg') format('svg');
+	src: url('../fonts/Montserrat/500/Montserrat.eot');
+	src: local('☺'), url('../fonts/Montserrat/500/Montserrat.woff') format('woff'), url('../fonts/Montserrat/500/Montserrat.ttf') format('truetype'), url('../fonts/Montserrat/500/Montserrat.svg') format('svg');
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Montserrat';
-	src: url('../fonts/montserrat_bold.eot');
-	src: local('☺'), url('../fonts/montserrat_bold.woff') format('woff'), url('../fonts/montserrat_bold.ttf') format('truetype'), url('../fonts/montserrat_bold.svg') format('svg');
+	src: url('../fonts/Montserrat/700/montserrat_bold.eot');
+	src: local('☺'), url('../fonts/Montserrat/700/montserrat_bold.woff') format('woff'), url('../fonts/Montserrat/700/montserrat_bold.ttf') format('truetype'), url('../fonts/Montserrat/700/montserrat_bold.svg') format('svg');
 	font-weight: 700;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/Montserrat/400/Montserrat-Regular.eot');
+	src: local('☺'), url('../fonts/Montserrat/400/Montserrat-Regular.woff') format('woff'), url('../fonts/Montserrat/400/Montserrat-Regular.ttf') format('truetype'), url('../fonts/Montserrat/400/Montserrat-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/Montserrat/600/Montserrat-SemiBold.eot');
+	src: local('☺'), url('../fonts/Montserrat/600/Montserrat-SemiBold.woff') format('woff'), url('../fonts/Montserrat/600/Montserrat-SemiBold.ttf') format('truetype'), url('../fonts/Montserrat/600/Montserrat-SemiBold.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
 
 /* Connect fonts */
 
@@ -23,6 +40,7 @@ body {
     margin: 0;
     -webkit-tap-highlight-color: transparent;
     font-family: 'Montserrat';
+    font-weight: 500;
 }
 
 a {
@@ -59,6 +77,42 @@ nav {
     height: 50px;
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+nav .account-block {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+nav .account-block:hover > .account-drop-down {
+    position: absolute;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.233);
+    border-radius: 10px;
+}
+
+.none {
+    display: none;
+}
+
+nav .account-block .account-block-img {
+    width: 45px;
+    display: flex;
+}
+
+nav .account-block .account-drop-down {
+    display: none;
+}
+
+nav .account-block .account-drop-down .account-adress {
+    color: white;
 }
 
 .connect_wallet_button {
@@ -183,6 +237,7 @@ header .text-best {
     font-size: 48px;
     color: #FFFFFF;
     z-index: 1;
+    font-weight: 700;
 }
 
 header .text-regular {
@@ -268,17 +323,22 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: 900;
+}
+
+main .swap-block {
+    position: absolute;
+    width: 100%;
+    height: 1000px;
 }
 
 main #swap-title {
     font-size: 36px;
     color: #131620;
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 main .swap-text {
-    font-weight: 500;
     font-size: 22px;
     color: rgba(19, 22, 32, 0.8);
     margin: 0;
@@ -288,21 +348,15 @@ main .swap-text {
 main #swap-link {
     position: relative;
     color: #277DD4;
-    font-size: 28px;
+    font-size: 23px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 7px 3px 7px 10px;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.4s;
     z-index: 2;
     bottom: 5px;
-    font-weight: 500;
-}
-
-main #swap-link:hover {
-    background: rgba(94, 94, 94, 0.15);
 }
 
 main #swap-link ion-icon {
@@ -427,7 +481,6 @@ main .flipping-blocks {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    font-weight: 500;
 }
 
 .front {
@@ -552,7 +605,6 @@ footer .front, footer .back {
     color: #FFFFFFB2;
     font-size: 18px;
     margin: 0;
-    font-weight: 500;
 }
 
 .useful-info .info-block h2 {
@@ -586,6 +638,7 @@ footer .license hr {
 footer .license p {
     position: relative;
     color: #FFFFFF40;
+    font-weight: 400;
 }
 
 footer .back .email-info {
@@ -637,16 +690,11 @@ footer .front .info-block #news-link {
     align-items: center;
     color: #277DD4;
     width: 80px;
-    padding: 7px;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.4s;
     z-index: 2;
     font-size: 22px;
-}
-
-footer .front .info-block #news-link:hover {
-    background: rgba(94, 94, 94, 0.15);
 }
 
 footer .front .info-block #news-link ion-icon {
@@ -886,6 +934,14 @@ footer .container .license {
     /*header .card, header .card-behind {
         transform: matrix(0.7, -0.21, -0.03, 0.686, 0, 0);
     }*/
+
+    header .text-best {
+        font-size: 45px;
+    }
+    
+    header .text-regular {
+        font-size: 23px;
+    }
 
     header .card-img {
         transform: scale(0.75);

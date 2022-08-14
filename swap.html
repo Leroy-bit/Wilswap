@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <!--
         <div class="title">
             <a href="#" class="logo">Yanchuk</a>
             <div class="lang">UA</div>
@@ -50,7 +51,85 @@
                 <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
             </div>
         </div>
+        -->
+        <nav>
+            <h1>Yanchuk</h1>
+            <div class="menu none">
+                <span class="menu-buttons">Swap</span>
+                <span class="menu-buttons">Swap Mode</span>
+                <span class="menu-buttons">Developers</span>
+                <span class="menu-buttons">About us</span>
+            </div>
+            <div class="account-block none">
+                <div class="account-drop-down none">
+                    <span class="account-adress"></span>
+                </div>
+            </div>
+            <div class="connect_wallet_button none">Connect<ion-icon name="wallet-outline" class="wallet-icon"></ion-icon></div>
+            <ion-icon name="ellipsis-horizontal" class="mobile-menu-icon"></ion-icon>
+        </nav>
+        <hr class="menu-hr">
+        <div class="mobile-menu">
+            <span class="mobile-menu-buttons">Swap</span>
+            <span class="mobile-menu-buttons">Swap Mode</span>
+            <span class="mobile-menu-buttons">Developers</span>
+            <span class="mobile-menu-buttons">About us</span>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a>
+                <ion-icon name="card-outline"></ion-icon>
+                <p>Card</p>
+            </a>
+            <a>
+                <ion-icon name="logo-yahoo"></ion-icon>
+                <p>Pay</p>
+            </a>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a>
+                <p>Simple</p>
+            </a>
+            <a>
+                <p>Classic</p>
+            </a>
+            <a>
+                <p>Limit</p>
+            </a>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a href="https://github.com/Leroy-bit/Wilswap">
+                <ion-icon name="logo-github"></ion-icon>
+                <p>GitHub</p>
+            </a>
+            <a>
+                <ion-icon name="reader-outline"></ion-icon>
+                <p>Documentation</p>
+            </a>
+        </div>
+        <div class="menu-options" style="display: none;">
+            <a>
+                <img src="images/Medium.png" alt="medium">
+                <p>Medium</p>
+            </a>
+            <a>
+                <img src="images/Telegram_1.png" alt="tg">
+                <p>Telegram</p>
+            </a>
+            <a>
+                <img src="images/Twitter_1.png" alt="twitter">
+                <p>Twitter</p>
+            </a>
+            <a>
+                <img src="images/Discord_1.png" alt="discord">
+                <p>Discord</p>
+            </a>
+            <a>
+                <ion-icon name="logo-yahoo"></ion-icon>
+                <p>We</p>
+            </a>
+        </div>
     </header>
+    <!--
     <div class="menu-mobile-block">
         <div class="menu">
             <div class="item active-item"><a href="index.html">Home</a></div>
@@ -86,98 +165,99 @@
             <ion-icon name="close-outline" class="menu-mobile-icon" style="display: none;"></ion-icon>
         </div>
     </div>
+    -->
     <main>
+        <div class="light"></div>
         <div class="swap">
             <div class="swap-content">
                 <div class="swap-menu">
                     <div class="swap-menu-options">
                         <span id="swap">Swap</span>
-                        <span id="limit">Limit</span>
+                        <span id="trade">Trade</span>
                         <!--<span id="p2p">P2P</span>-->
                     </div>
-                    <div class="swap-menu-settings">
-                        <ion-icon name="refresh-outline" id="refresh"></ion-icon>
-                        <ion-icon name="options-outline"></ion-icon>
-                    </div>
+                    <ion-icon name="ellipsis-horizontal" class="mobile-menu-icon"></ion-icon>
                 </div>
                 <div class="swap-trade">
                     <div class="swap-trade-sell">
-                        <p>You sell</p>
                         <div class="swap-trade-currency">
                             <div class="currency-choice sell">
                                 <img src="images/Ethereum-icon.png" alt="Ethereum">
                                 <p>ETH</p>
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
-                            <input type="text" value="0" id="currency-number-sell" class="numbers">
+                            <input type="text" value="0.000" id="currency-number-sell" class="numbers">
                         </div>
                         <div class="swap-trade-sell-info">
-                            <p>Ethereum</p>
-                            <p class="numbers">$ 1778,03</p>
+                            <p class="numbers">~</p>
                         </div>
                     </div>
-                    <ion-icon name="arrow-down-circle" id="swap-arrow"></ion-icon>
+                    <ion-icon name="swap-vertical-outline" id="swap-arrow"></ion-icon>
                     <div class="swap-trade-buy">
-                        <p>You buy</p>
                         <div class="swap-trade-currency">
                             <div class="currency-choice buy">
                                 <img src="images/Ethereum-icon.png" alt="Ethereum">
                                 <p>ETH</p>
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
-                            <p id="currency-number-buy" class="numbers">0</p>
+                            <p id="currency-number-buy" class="numbers">0.000</p>
                         </div>
-                        <div class="percent-window">
-                            <div>
-                                <b class="percent-window-main">Yanchuk</b>
-                                <p>Blablabla</p>
-                            </div>
-                            <div>
-                                <b class="percent-window-main numbers">0.0000</b>
-                                <p class="numbers">$ 0000,00</p>
-                            </div>
-                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        <div class="swap-trade-sell-info">
+                            <p class="numbers">~</p>
                         </div>
                     </div>
                 </div>
-                <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
+                <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon>Connect</div>
             </div>
-            <div class="swap-search">
-                <ion-icon name="chevron-back-outline" class="back-button"></ion-icon>
-                <b class="search-title">Select currency</b>
-                <div class="search-input">
-                    <ion-icon name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Enter a name of coin" id="input-coins">
-                </div>
-                <div class="all-coins">
-                    <ul>
-                        <li class="coin-li available-coin" id="ETH">
-                            <img src="images/Ethereum-icon.png" alt="Ethereum" class="coin-image">
+        </div>
+        <div class="swap-search">
+            <div class="search-input">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Enter a name of coin" id="input-coins">
+            </div>
+            <div class="all-coins">
+                <ul>
+                    <li class="coin-li available-coin" id="ETH">
+                        <div class="coin-name">
+                            <img src="images/Ethereum-icon.png" alt="ETH Ethereum" class="coin-image">
                             <p class="name">ETH</p>
-                        </li>
-                        <li class="coin-li available-coin" id="BTC">
-                            <img src="images/Bitcoin-icon.png" alt="Bitcoin" class="coin-image">
-                            <p class="name">Bitcoin</p>
-                        </li>
-                        <li class="coin-li available-coin" id="MATIC">
+                        </div>
+                        <p class="search-price">~</p>
+                    </li>
+                    <li class="coin-li available-coin" id="BTC">
+                        <div class="coin-name">
+                            <img src="images/Bitcoin-icon.png" alt="BTC Bitcoin" class="coin-image">
+                            <p class="name">BTC</p>
+                        </div>
+                        <p class="search-price">~</p>
+                    </li>
+                    <li class="coin-li available-coin" id="MATIC">
+                        <div class="coin-name">
                             <img src="images/Matic-icon.png" alt="Matic" class="coin-image">
                             <p class="name">Matic</p>
-                        </li>
-                        <li class="coin-li available-coin" id="ETC">
-                            <img src="images/Ethereum-Classic-icon.png" alt="Ethereum Classic" class="coin-image">
+                        </div>
+                        <p class="search-price">~</p>
+                    </li>
+                    <li class="coin-li available-coin" id="ETC">
+                        <div class="coin-name">
+                            <img src="images/Ethereum-Classic-icon.png" alt="ETC Ethereum Classic" class="coin-image">
                             <p class="name">ETC</p>
-                        </li>
-                        <li class="coin-li available-coin" id="BNB">
+                        </div>
+                        <p class="search-price">~</p>
+                    </li>
+                    <li class="coin-li available-coin" id="BNB">
+                        <div class="coin-name">
                             <img src="images/Binance-Coin-icon.png" alt="BNB" class="coin-image">
                             <p class="name">BNB</p>
-                        </li>
-                        <li id="error-search"></li>
-                    </ul>
-                </div>
+                        </div>
+                        <p class="search-price">~</p>
+                    </li>
+                    <li id="error-search"></li>
+                </ul>
             </div>
         </div>
         
-        <div class="animation"><img src="images/3d.png" alt="3d"></div>
+        <!--<div class="animation"><img src="images/3d.png" alt="3d"></div>-->
     </main>
     <div class="blur"></div>
 
