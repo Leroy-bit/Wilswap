@@ -1,6 +1,7 @@
 // define all global variables
 
 let currency = document.getElementsByClassName('currency-choice')
+let swap_block = document.getElementsByClassName('swap')[0];
 let swapSearch = document.getElementsByClassName('swap-search')[0];
 let to_sell_label = document.getElementById("currency-number-sell")
 let to_buy_label = document.getElementById("currency-number-buy")
@@ -28,6 +29,11 @@ let menu_buttons = document.getElementsByClassName('menu-buttons');
 let menu_options = document.getElementsByClassName('menu-options');
 let mobile_menu = document.getElementsByClassName('mobile-menu')[0];
 let mobile_menu_icon = document.getElementsByClassName('mobile-menu-icon')[0];
+let extra_menu_icon = document.getElementsByClassName('extra-menu-icon')[0];
+let extra_menu = document.getElementsByClassName('extra-menu')[0];
+let gas_options = document.getElementsByClassName('gas-option');
+let custom_options = document.getElementsByClassName('custom-option');
+let percentage_buttons = document.getElementsByClassName('percentage-button');
 
 // get cryptocurrency exchange rate
 
@@ -144,7 +150,23 @@ document.addEventListener("DOMContentLoaded", function() {
     // Set a null values to input lables
     to_sell_label.value = '0';
     to_buy_label.innerHTML = '0.000';
-    
+    if (localStorage.hasOwnProperty('gas-option') == true) {
+        gas_options[localStorage.getItem('gas-option')].className += ' gas-selected';
+    } else {
+        gas_options[0].className += ' gas-selected';
+    }
+
+    if (localStorage.hasOwnProperty('custom-option') == true) {
+        custom_options[localStorage.getItem('custom-option')].className += ' custom-selected';
+    } else {
+        custom_options[0].className += ' custom-selected';
+    }
+
+    if (localStorage.hasOwnProperty('percentage-option') == true) {
+        percentage_buttons[localStorage.getItem('percentage-option')].className += ' percentage-selected';
+    } else {
+        percentage_buttons[0].className += ' percentage-selected';
+    }
 })
 let exchange_rate_timer_id = setInterval(exchange_rate_tick, 10000);  // Create a timer for get the exchange rates
 
@@ -243,7 +265,7 @@ for (let i = 0; i < menu_buttons.length; i++) {
             for (var j = 0; j < menu_buttons.length; j++) {
                 if (j == i) {
                     menu_options[j].style.display = 'flex';
-                    menu_options[j].style.animation = '0.8s show';
+                    menu_options[j].style.animation = '0.8s show-menu';
                 } else {
                     menu_options[j].style.display = 'none';
                 }
@@ -256,7 +278,7 @@ for (let i = 0; i < menu_buttons.length; i++) {
 
 mobile_menu_icon.addEventListener('click', () => {
     mobile_menu.style.display = 'flex';
-    mobile_menu.style.animation = '0.8s show';
+    mobile_menu.style.animation = '0.8s show-menu';
     blur_block.style.display = 'block';
 });
 
@@ -265,6 +287,56 @@ blur_block.addEventListener('click', () => {
     swapSearch.style.display = 'none';
     blur_block.style.display = 'none';
 });
+
+// Extra menu
+
+extra_menu_icon.addEventListener('click', () => {
+    if (extra_menu.style.opacity == '0') {
+        extra_menu.style.opacity = '1';
+        extra_menu.style.marginLeft = '880px'; //880
+        //swap_block.style.right = '160px';
+    } else {
+        extra_menu.style.opacity = '0';
+        extra_menu.style.marginLeft = '0px';
+        //swap_block.style.right = '0px';
+    }
+});
+
+for (let i = 0; i < gas_options.length; i++) {
+    gas_options[i].addEventListener('click', () => {
+        localStorage.setItem('gas-option',i);
+        for (let j = 0; j < gas_options.length; j++) {
+            gas_options[j].className = 'gas-option';
+        }
+        gas_options[i].style.animation = '0.8s option-select';
+        gas_options[i].className += ' gas-selected';
+        setTimeout(() => {gas_options[i].style.animation = 'none';}, 800);
+    });
+}
+
+for (let i = 0; i < custom_options.length; i++) {
+    custom_options[i].addEventListener('click', () => {
+        localStorage.setItem('custom-option',i);
+        for (let j = 0; j < custom_options.length; j++) {
+            custom_options[j].className = 'custom-option';
+        }
+        custom_options[i].style.animation = '0.8s option-select';
+        custom_options[i].className += ' custom-selected';
+        setTimeout(() => {custom_options[i].style.animation = 'none';}, 800);
+    });
+}
+
+for (let i = 0; i < percentage_buttons.length; i++) {
+    percentage_buttons[i].addEventListener('click', () => {
+        localStorage.setItem('percentage-option',i);
+        for (let j = 0; j < percentage_buttons.length; j++) {
+            percentage_buttons[j].className = 'percentage-button';
+        }
+        percentage_buttons[i].style.animation = '0.8s option-select';
+        percentage_buttons[i].className += ' percentage-selected';
+        setTimeout(() => {percentage_buttons[i].style.animation = 'none';}, 800);
+    });
+}
 
 /*menuMobileAction.addEventListener('click', function() {
     if (menuMobileIcon[1].style.display == 'none') {

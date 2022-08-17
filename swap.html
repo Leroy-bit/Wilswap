@@ -168,47 +168,108 @@
     -->
     <main>
         <div class="light"></div>
-        <div class="swap">
-            <div class="swap-content">
-                <div class="swap-menu">
-                    <div class="swap-menu-options">
-                        <span id="swap">Swap</span>
-                        <span id="trade">Trade</span>
-                        <!--<span id="p2p">P2P</span>-->
-                    </div>
-                    <ion-icon name="ellipsis-horizontal" class="mobile-menu-icon"></ion-icon>
+        <div class="extra-menu" style="opacity: 0;">
+            <div class="extra-menu-block">
+                <div class="block-title">
+                    <p>Gas</p>
+                    <img src="images/gas.png" alt="gas">
                 </div>
-                <div class="swap-trade">
-                    <div class="swap-trade-sell">
-                        <div class="swap-trade-currency">
-                            <div class="currency-choice sell">
-                                <img src="images/Ethereum-icon.png" alt="Ethereum">
-                                <p>ETH</p>
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                            <input type="text" value="0.000" id="currency-number-sell" class="numbers">
-                        </div>
-                        <div class="swap-trade-sell-info">
-                            <p class="numbers">~</p>
-                        </div>
+                <div class="gas-option">
+                    <div class="gas-option-name">
+                        <p class="name">Instant</p>
+                        <p class="time">&lt;10sec</p>
                     </div>
-                    <ion-icon name="swap-vertical-outline" id="swap-arrow"></ion-icon>
-                    <div class="swap-trade-buy">
-                        <div class="swap-trade-currency">
-                            <div class="currency-choice buy">
-                                <img src="images/Ethereum-icon.png" alt="Ethereum">
-                                <p>ETH</p>
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                            <p id="currency-number-buy" class="numbers">0.000</p>
-                        </div>
-                        <div class="swap-trade-sell-info">
-                            <p class="numbers">~</p>
-                        </div>
-                    </div>
+                    <p class="gas-option-price">8,7-18,34 Gwei</p>
                 </div>
-                <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon>Connect</div>
+                <div class="gas-option">
+                    <div class="gas-option-name">
+                        <p class="name">High</p>
+                        <p class="time">~13sec</p>
+                    </div>
+                    <p class="gas-option-price">8,7-14,5 Gwei</p>
+                </div>
+                <div class="gas-option">
+                    <div class="gas-option-name">
+                        <p class="name">Medium</p>
+                        <p class="time">~17sec</p>
+                    </div>
+                    <p class="gas-option-price">8,7-12,8 Gwei</p>
+                </div>
+                <div class="gas-option">
+                    <div class="gas-option-name">
+                        <p class="name">Low</p>
+                        <p class="time">&gt;1min</p>
+                    </div>
+                    <p class="gas-option-price">8,7-11 Gwei</p>
+                </div>
+                <div class="block-custom">
+                    <p>Custom</p>
+                </div>
+                <div class="custom-option">
+                    <p class="fee-name">Max priority fee</p>
+                    <p class="fee-price">8,7</p>
+                </div>
+                <div class="custom-option">
+                    <p class="fee-name">Max fee</p>
+                    <p class="fee-price">20,5</p>
+                </div>
             </div>
+            <div class="extra-menu-block">
+                <div class="block-title">
+                    <p>Slippage</p>
+                    <img src="images/slippage.png" alt="slippage">
+                </div>
+                <div class="percentage">
+                    <span class="percentage-button">0.1%</span>
+                    <span class="percentage-button">0.5%</span>
+                    <span class="percentage-button">1%</span>
+                    <span class="percentage-button">Custom</span>
+                </div>
+                <div class="block-custom" id="custom-tokens">
+                    <p>Custom tokens</p>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div class="swap" style="right: 0px;">
+            <div class="swap-menu">
+                <div class="swap-menu-options">
+                    <span id="swap">Swap</span>
+                    <span id="trade">Trade</span>
+                    <!--<span id="p2p">P2P</span>-->
+                </div>
+                <ion-icon name="ellipsis-horizontal" class="extra-menu-icon"></ion-icon>
+            </div>
+            <div class="swap-trade">
+                <div class="swap-trade-sell">
+                    <div class="swap-trade-currency">
+                        <div class="currency-choice sell">
+                            <img src="images/Ethereum-icon.png" alt="Ethereum">
+                            <p>ETH</p>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <input type="text" value="0.000" id="currency-number-sell" class="numbers">
+                    </div>
+                    <div class="swap-trade-sell-info">
+                        <p class="numbers">~</p>
+                    </div>
+                </div>
+                <ion-icon name="swap-vertical-outline" id="swap-arrow"></ion-icon>
+                <div class="swap-trade-buy">
+                    <div class="swap-trade-currency">
+                        <div class="currency-choice buy">
+                            <img src="images/Ethereum-icon.png" alt="Ethereum">
+                            <p>ETH</p>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <p id="currency-number-buy" class="numbers">0.000</p>
+                    </div>
+                    <div class="swap-trade-sell-info">
+                        <p class="numbers">~</p>
+                    </div>
+                </div>
+            </div>
+            <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon>Connect</div>
         </div>
         <div class="swap-search">
             <div class="search-input">
@@ -256,8 +317,6 @@
                 </ul>
             </div>
         </div>
-        
-        <!--<div class="animation"><img src="images/3d.png" alt="3d"></div>-->
     </main>
     <div class="blur"></div>
 

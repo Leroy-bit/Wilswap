@@ -65,7 +65,7 @@ main {
     margin-top: 50px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
 }
@@ -579,7 +579,7 @@ header .mobile-menu span:hover {
     height: 18px;
 }
 
-.swap-content .connect_wallet_button {
+.swap .connect_wallet_button {
     width: 230px;
     height: 70px;
     background: linear-gradient(67.34deg, rgba(0, 0, 0, 0.3) 0%, rgba(27, 31, 44, 0.5) 51.75%, rgba(0, 0, 0, 0.17) 106.05%);
@@ -587,12 +587,12 @@ header .mobile-menu span:hover {
     font-size: 26px;
 }
 
-.swap-content .connect_wallet_button .wallet-icon{
+.swap .connect_wallet_button .wallet-icon{
     width: 30px;
     height: 30px;
 }
 
-.swap-content .connect_wallet_button:hover {
+.swap .connect_wallet_button:hover {
     background: #277DD4;
     border-radius: 50px;
 }
@@ -635,24 +635,18 @@ header .mobile-menu span:hover {
 
 .swap {
     position: relative;
-    width: 510px;
-    height: 750px;
-    border-radius: 40px;
-    background-color: #000000;
-    z-index: 0;
-    background: linear-gradient(243.1deg, rgba(0, 0, 0, 0.98) -23.3%, rgba(19, 22, 32, 0.98) 46.57%, rgba(0, 0, 0, 0.98) 119.88%);
-    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.6);
-}
-
-.swap-content {
-    position: relative;
-    height: 690px;
-    width: 430px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    height: 690px;
+    width: 430px;
     padding: 30px 40px;
+    border-radius: 40px;
+    z-index: 0;
+    transition: 0.8s;
+    background: linear-gradient(243.1deg, rgba(0, 0, 0, 0.98) -23.3%, rgba(19, 22, 32, 0.98) 46.57%, rgba(0, 0, 0, 0.98) 119.88%);
+    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.6);   
 }
 
 /* Menu for swap window */
@@ -813,7 +807,7 @@ header .mobile-menu span:hover {
     color: #FFFFFF;
 }
 
-.swap-content .connect_wallet_button {
+.swap .connect_wallet_button {
     margin-top: 25px;
 }
 
@@ -932,6 +926,159 @@ header .mobile-menu span:hover {
     justify-content: center;
 }
 
+.extra-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 690px;
+    width: 250px;
+    padding: 30px 25px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.6);
+    gap: 20px;
+    transition: 0.8s;
+}
+
+.extra-menu-block {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.extra-menu-block .block-title {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 22px;
+}
+
+.extra-menu-block .block-custom {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.extra-menu-block #custom-tokens:hover {
+    opacity: 1;
+}
+
+.extra-menu-block #custom-tokens ion-icon {
+    transition: 0.6s;
+}
+
+.extra-menu-block #custom-tokens:hover ion-icon {
+    transform: rotate(360deg);
+}
+
+.extra-menu-block .gas-option, .extra-menu-block .custom-option {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.01);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.extra-menu-block .gas-option:hover, .extra-menu-block .custom-option:hover {
+    background: rgba(206, 207, 209, 0.15);
+}
+
+.extra-menu-block .percentage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.01);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    font-size: 14px;
+}
+
+.extra-menu-block .percentage span {
+    opacity: 0.25;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.extra-menu-block .percentage span:hover {
+    background: rgba(206, 207, 209, 0.15);
+    opacity: 1;
+}
+
+.extra-menu-block .custom-option .fee-name {
+    margin-left: 30px;
+}
+
+.extra-menu-block .custom-option .fee-price {
+    margin-right: 30px;
+}
+
+.extra-menu-block .gas-option-name {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+    gap: 5px;
+}
+
+.extra-menu-block .gas-option-name .time {
+    color: #FFFFFF;
+    opacity: 0.25;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.extra-menu-block .gas-option-price {
+    margin-right: 10px;
+}
+
+.extra-menu-block .gas-selected::before, .extra-menu-block .custom-selected::before {
+    position: absolute;
+    content: " ";
+    background-image: url('../images/selected.png');
+    height: 16px;
+    width: 16px;
+    background-size: 100% 100%;
+    left: 10px;
+}
+
+.extra-menu-block .percentage .percentage-selected {
+    border-bottom: 2px solid #277DD4;
+    opacity: 1;
+}
+
 /* Adaptaion */
 .blur {
     position: fixed;
@@ -985,13 +1132,8 @@ header .mobile-menu span:hover {
 
 @media screen and (max-width: 550px) {
     .swap {
-        width: 410px;
-        height: 650px;
-    }
-    
-    .swap-content {
+        width: 350px;
         height: 590px;
-        width: 330px;
     }
 
     .swap-menu-options {
@@ -1007,13 +1149,8 @@ header .mobile-menu span:hover {
 
 @media screen and (max-width: 450px) {
     .swap {
-        width: 310px;
-        height: 550px;
-    }
-    
-    .swap-content {
-        height: 490px;
         width: 230px;
+        height: 470px;
     }
 
     .swap-menu-options {
@@ -1037,11 +1174,23 @@ header .mobile-menu span:hover {
 
 /* Animations */
 
-@keyframes show {
+@keyframes show-menu {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes option-select {
+    0% {
+        background: rgba(206, 207, 209, 0.15);
+    }
+    50% {
+        background: #277DD4;
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.01);
     }
 }
