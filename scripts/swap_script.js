@@ -479,9 +479,11 @@ for (let i = 0; i < swap_modes.length; i++) {
             second_mode_menu.style.display = 'none'
         } else {
             extra_menu_icon.style.display = 'none';
+            extra_menu.style.zIndex = '0';
             extra_menu.style.opacity = '0';
             extra_menu.style.marginLeft = '0%';
             second_mode_menu.style.display = 'block'
+            swap_block.style.marginRight = '0px';
         }
     });
 }
