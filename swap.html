@@ -10,48 +10,6 @@
 </head>
 <body>
     <header>
-        <!--
-        <div class="title">
-            <a href="#" class="logo">Yanchuk</a>
-            <div class="lang">UA</div>
-        </div>
-        <div class="navigation">
-            <div class="menu">
-                <div class="item active-item"><a href="index.html">Home</a></div>
-                <div class="item">
-                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Trade</div>
-                    <div class="drop-menu">
-                        <div class="element">Simple Mode</div>
-                        <div class="element">Classic Mode</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Earn</div>
-                    <div class="drop-menu">
-                        <div class="element">Pool</div>
-                        <div class="element">Mining</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>More</div>
-                    <div class="drop-menu">
-                        <div class="element">About</div>
-                        <div class="element">Blog</div>
-                        <div class="element">Donate</div>
-                    </div>
-                </div>
-            </div>
-            <div class="account-block none">
-                <div class="account-drop-down none">
-                    <span class="account-adress"></span>
-                </div>
-            </div>
-            <div class="connect_wallet_button"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon><div class="text">Connect wallet</div></div>
-            <div class="general-settings">
-                <div class="setings"><ion-icon name="cog" class="icon"></ion-icon></div>
-            </div>
-        </div>
-        -->
         <nav>
             <h1>Yanchuk</h1>
             <div class="menu none">
@@ -86,18 +44,18 @@
             </a>
         </div>
         <div class="menu-options" style="display: none;">
-            <a>
+            <a class="swap-mode">
                 <p>Simple</p>
             </a>
-            <a>
+            <a class="swap-mode">
                 <p>Classic</p>
             </a>
-            <a>
+            <a class="swap-mode">
                 <p>Limit</p>
             </a>
         </div>
         <div class="menu-options" style="display: none;">
-            <a href="https://github.com/Leroy-bit/Wilswap">
+            <a href="#">
                 <ion-icon name="logo-github"></ion-icon>
                 <p>GitHub</p>
             </a>
@@ -129,109 +87,93 @@
             </a>
         </div>
     </header>
-    <!--
-    <div class="menu-mobile-block">
-        <div class="menu">
-            <div class="item active-item"><a href="index.html">Home</a></div>
-            <div class="item">
-                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Trade</div>
-                <div class="drop-menu">
-                    <div class="element">Simple Mode</div>
-                    <div class="element">Classic Mode</div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>Earn</div>
-                <div class="drop-menu">
-                    <div class="element">Pool</div>
-                    <div class="element">Mining</div>
-                 </div>
-            </div>
-            <div class="item">
-                <div class="text arrow-down"><ion-icon name="chevron-down-outline"></ion-icon>More</div>
-                <div class="drop-menu">
-                    <div class="element">About</div>
-                    <div class="element">Blog</div>
-                    <div class="element">Donate</div>
-                </div>
-            </div>
-            <div class="item mobile-settings last">
-                <ion-icon name="cog" class="icon"></ion-icon>Settings
-            </div>
-            
-        </div>
-        <div class="menu-mobile">
-            <ion-icon name="menu-outline" class="menu-mobile-icon"></ion-icon>
-            <ion-icon name="close-outline" class="menu-mobile-icon" style="display: none;"></ion-icon>
-        </div>
-    </div>
-    -->
     <main>
+        <div class="main-bg"></div>
         <div class="light"></div>
-        <div class="extra-menu" style="opacity: 0;">
-            <div class="extra-menu-block">
-                <div class="block-title">
-                    <p>Gas</p>
-                    <img src="images/gas.png" alt="gas">
+        <div class="trading-view none">
+            <div class="trading-view-menu">
+                <div class="currency-choice view">
+                    <img src="images/Ethereum-icon.png" alt="Ethereum">
+                    <p>ETH</p>
+                    <p style="margin-left: 5px;">/</p>
+                    <img src="images/Tether-USDT.png" alt="tether">
+                    <p>USDT</p>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
                 </div>
-                <div class="gas-option">
-                    <div class="gas-option-name">
-                        <p class="name">Instant</p>
-                        <p class="time">&lt;10sec</p>
-                    </div>
-                    <p class="gas-option-price">8,7-18,34 Gwei</p>
-                </div>
-                <div class="gas-option">
-                    <div class="gas-option-name">
-                        <p class="name">High</p>
-                        <p class="time">~13sec</p>
-                    </div>
-                    <p class="gas-option-price">8,7-14,5 Gwei</p>
-                </div>
-                <div class="gas-option">
-                    <div class="gas-option-name">
-                        <p class="name">Medium</p>
-                        <p class="time">~17sec</p>
-                    </div>
-                    <p class="gas-option-price">8,7-12,8 Gwei</p>
-                </div>
-                <div class="gas-option">
-                    <div class="gas-option-name">
-                        <p class="name">Low</p>
-                        <p class="time">&gt;1min</p>
-                    </div>
-                    <p class="gas-option-price">8,7-11 Gwei</p>
-                </div>
-                <div class="block-custom">
-                    <p>Custom</p>
-                </div>
-                <div class="custom-option">
-                    <p class="fee-name">Max priority fee</p>
-                    <p class="fee-price">8,7</p>
-                </div>
-                <div class="custom-option">
-                    <p class="fee-name">Max fee</p>
-                    <p class="fee-price">20,5</p>
+                <div class="chart-range range-menu">
+                    <span class="time-button" id="45">15M</span>
+                    <span class="time-button" id="180">1H</span>
+                    <span class="time-button" id="720">4H</span>
+                    <span class="time-button" id="4320">1d</span>
+                    <span class="time-button" id="8640">More</span>
                 </div>
             </div>
-            <div class="extra-menu-block">
-                <div class="block-title">
-                    <p>Slippage</p>
-                    <img src="images/slippage.png" alt="slippage">
-                </div>
-                <div class="percentage">
-                    <span class="percentage-button">0.1%</span>
-                    <span class="percentage-button">0.5%</span>
-                    <span class="percentage-button">1%</span>
-                    <span class="percentage-button">Custom</span>
-                </div>
-                <div class="block-custom" id="custom-tokens">
-                    <p>Custom tokens</p>
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </div>
-            </div>
+            <canvas class="trading-view-chart"></canvas>
         </div>
         <div class="swap" style="right: 0px;">
+            <div class="extra-menu" style="opacity: 0;">
+                <div class="extra-menu-block">
+                    <div class="block-title">
+                        <p>Gas</p>
+                        <img src="images/gas.png" alt="gas">
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">Instant</p>
+                            <p class="time">&lt;10sec</p>
+                        </div>
+                        <p class="gas-option-price">8,7-18,34 Gwei</p>
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">High</p>
+                            <p class="time">~13sec</p>
+                        </div>
+                        <p class="gas-option-price">8,7-14,5 Gwei</p>
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">Medium</p>
+                            <p class="time">~17sec</p>
+                        </div>
+                        <p class="gas-option-price">8,7-12,8 Gwei</p>
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">Low</p>
+                            <p class="time">&gt;1min</p>
+                        </div>
+                        <p class="gas-option-price">8,7-11 Gwei</p>
+                    </div>
+                    <div class="block-custom">
+                        <p>Custom</p>
+                    </div>
+                    <div class="custom-option">
+                        <p class="fee-name">Max priority fee</p>
+                        <p class="fee-price">8,7</p>
+                    </div>
+                    <div class="custom-option">
+                        <p class="fee-name">Max fee</p>
+                        <p class="fee-price">20,5</p>
+                    </div>
+                </div>
+                <div class="extra-menu-block">
+                    <div class="block-title">
+                        <p>Slippage</p>
+                        <img src="images/slippage.png" alt="slippage">
+                    </div>
+                    <div class="percentage range-menu">
+                        <span class="percentage-button">0.1%</span>
+                        <span class="percentage-button">0.5%</span>
+                        <span class="percentage-button">1%</span>
+                        <span class="percentage-button">Custom</span>
+                    </div>
+                    <div class="block-custom" id="custom-tokens">
+                        <p>Custom tokens</p>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
             <div class="swap-menu">
                 <div class="swap-menu-options">
                     <span id="swap">Swap</span>
@@ -248,7 +190,7 @@
                             <p>ETH</p>
                             <ion-icon name="chevron-down-outline"></ion-icon>
                         </div>
-                        <input type="text" value="0.000" id="currency-number-sell" class="numbers">
+                        <input type="text" value="0" id="currency-number-sell" class="numbers">
                     </div>
                     <div class="swap-trade-sell-info">
                         <p class="numbers">~</p>
@@ -262,7 +204,7 @@
                             <p>ETH</p>
                             <ion-icon name="chevron-down-outline"></ion-icon>
                         </div>
-                        <p id="currency-number-buy" class="numbers">0.000</p>
+                        <p id="currency-number-buy" class="numbers">0</p>
                     </div>
                     <div class="swap-trade-sell-info">
                         <p class="numbers">~</p>
@@ -270,6 +212,68 @@
                 </div>
             </div>
             <div class="connect_wallet_button" style="display: none;"><ion-icon name="wallet-outline" class="wallet-icon"></ion-icon>Connect</div>
+            <div class="second-mode-menu" style="display: none;">
+                <div class="extra-menu-mode">
+                    <span class="mode-button">Standart</span>
+                    <span class="mode-button">Custom</span>
+                </div>
+                <div class="extra-menu-block standart-mode">
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">Instant</p>
+                            <p class="time">&lt;10sec</p>
+                        </div>
+                        <p class="gas-option-price">8,7-18,34 Gwei</p>
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">High</p>
+                            <p class="time">~13sec</p>
+                        </div>
+                        <p class="gas-option-price">8,7-14,5 Gwei</p>
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">Medium</p>
+                            <p class="time">~17sec</p>
+                        </div>
+                        <p class="gas-option-price">8,7-12,8 Gwei</p>
+                    </div>
+                    <div class="gas-option">
+                        <div class="gas-option-name">
+                            <p class="name">Low</p>
+                            <p class="time">&gt;1min</p>
+                        </div>
+                        <p class="gas-option-price">8,7-11 Gwei</p>
+                    </div>
+                </div>
+                <div class="extra-menu-block standart-mode">
+                    <div class="block-title">
+                        <p>Slippage</p>
+                        <img src="images/slippage.png" alt="slippage">
+                    </div>
+                    <div class="percentage range-menu">
+                        <span class="percentage-button">0.1%</span>
+                        <span class="percentage-button">0.5%</span>
+                        <span class="percentage-button">1%</span>
+                        <span class="percentage-button">Custom</span>
+                    </div>
+                    <div class="block-custom" id="custom-tokens">
+                        <p>Custom tokens</p>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="extra-menu-block custom-mode" style="display: none;">
+                    <div class="custom-option">
+                        <p class="fee-name">Max priority fee</p>
+                        <p class="fee-price">8,7</p>
+                    </div>
+                    <div class="custom-option">
+                        <p class="fee-name">Max fee</p>
+                        <p class="fee-price">20,5</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="swap-search">
             <div class="search-input">
@@ -319,7 +323,7 @@
         </div>
     </main>
     <div class="blur"></div>
-
+    <script src="scripts/chart.min.js"></script>
     <script type="module" src="scripts/swap_script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
